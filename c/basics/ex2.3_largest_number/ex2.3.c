@@ -8,9 +8,9 @@ void main()
 	fflush(stdout);
 	scanf("%f %f %f", &x, &y, &z);
 	fflush(stdout);
-	if (x > y)
+	if (x >= y)
 	{
-		if(x > z)
+		if(x >= z)
 			printf("largest number= %.2f", x);
 		else
 			printf("largest number= %.2f", z);
