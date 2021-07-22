@@ -30,7 +30,7 @@ void main()
 		matrix[i+1] = matrix[i];
 	}
 	no_of_elements += 1;
-    matrix[insertion_location-1]=inserted_element;
+	matrix[insertion_location-1]=inserted_element;
 /************************************************************************/	
 		/*printing the new matrix*/
 	for(i=0; i<no_of_elements; i++)
