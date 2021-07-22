@@ -16,5 +16,11 @@ void main()
 			printf("largest number= %.2f", z);
 	}
 	else
-		printf("largest number= %.2f", y);
+	{
+	    if(y >= z)
+    		printf("largest number= %.2f", y);
+		else
+			printf("largest number= %.2f", z);
+	}
+	    
 }
