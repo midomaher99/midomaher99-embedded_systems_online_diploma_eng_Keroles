@@ -2,7 +2,7 @@
 void main()
 {
 	int matrix[20], inserted_element;
-	unsigned char no_of_elements, i, insertion_location ;
+	char no_of_elements, i, insertion_location ;
 	
 /************************************************************************/
         /*taking the number of elements and the array elements*/
