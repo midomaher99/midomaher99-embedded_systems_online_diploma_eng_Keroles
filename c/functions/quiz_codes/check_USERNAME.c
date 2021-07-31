@@ -24,10 +24,10 @@ int main()
 int check_username(char username[])
 {
 	int i;
-	char USERNAME[] ={"USERNAME"};
+	
 	for (i = 0; i < strlen(username); i++)
 	{
-		if(!(username[i] == USERNAME[i]))
+		if(!(username[i] == "USERNAME"[i]))
 		{
 			return 0;
 		}
