@@ -22,7 +22,9 @@ int main()
 int check_4th_bit(int num)
 {
 	/*all bits will be 1 except the 4th bit remains as it was*/
-	int x = num | 0b11111111111111111111111111110111;
+	int x = num | 0xfffffff7;
+	
+	
 	/*reverse all bits (all bits will be zero except the 4th bit will be toogled)
 	 so if it is now 0 ==> it was 1 and x = 0b0000 0000 0000 0000 0000 0000 0000 0000 = 0
  	 	if it is now 1 ==> it was 0 and x = 0b0000 0000 0000 0000 0000 0000 0000 1000 = 8
