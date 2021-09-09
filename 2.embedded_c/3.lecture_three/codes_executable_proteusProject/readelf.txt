@@ -1,0 +1,122 @@
+ELF Header:
+  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF32
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           ARM
+  Version:                           0x1
+  Entry point address:               0x8000000
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          134000 (bytes into file)
+  Flags:                             0x5000200, Version5 EABI, soft-float ABI
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         2
+  Size of section headers:           40 (bytes)
+  Number of section headers:         17
+  Section header string table index: 16
+
+Section Headers:
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .text             PROGBITS        08000000 010000 00011c 00  AX  0   0  4
+  [ 2] .rodata           PROGBITS        0800011c 020000 000000 00  WA  0   0  1
+  [ 3] .data             PROGBITS        20000000 020000 000000 00  WA  0   0  1
+  [ 4] .bss              NOBITS          20000000 020000 000000 00  WA  0   0  1
+  [ 5] .debug_info       PROGBITS        00000000 020000 0001ae 00      0   0  1
+  [ 6] .debug_abbrev     PROGBITS        00000000 0201ae 0000f4 00      0   0  1
+  [ 7] .debug_loc        PROGBITS        00000000 0202a2 000088 00      0   0  1
+  [ 8] .debug_aranges    PROGBITS        00000000 02032a 000040 00      0   0  1
+  [ 9] .debug_line       PROGBITS        00000000 02036a 000167 00      0   0  1
+  [10] .debug_str        PROGBITS        00000000 0204d1 000193 01  MS  0   0  1
+  [11] .comment          PROGBITS        00000000 020664 00007e 01  MS  0   0  1
+  [12] .ARM.attributes   ARM_ATTRIBUTES  00000000 0206e2 000033 00      0   0  1
+  [13] .debug_frame      PROGBITS        00000000 020718 000060 00      0   0  4
+  [14] .symtab           SYMTAB          00000000 020778 000270 10     15  21  4
+  [15] .strtab           STRTAB          00000000 0209e8 0000e1 00      0   0  1
+  [16] .shstrtab         STRTAB          00000000 020ac9 0000a5 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  y (purecode), p (processor specific)
+
+There are no section groups in this file.
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  LOAD           0x010000 0x08000000 0x08000000 0x0011c 0x0011c R E 0x10000
+  LOAD           0x020000 0x20000000 0x0800011c 0x00000 0x00000 RW  0x10000
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text 
+   01     .data .bss 
+
+There is no dynamic section in this file.
+
+There are no relocations in this file.
+
+There are no unwind sections in this file.
+
+Symbol table '.symtab' contains 39 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 08000000     0 SECTION LOCAL  DEFAULT    1 
+     2: 0800011c     0 SECTION LOCAL  DEFAULT    2 
+     3: 20000000     0 SECTION LOCAL  DEFAULT    3 
+     4: 20000000     0 SECTION LOCAL  DEFAULT    4 
+     5: 00000000     0 SECTION LOCAL  DEFAULT    5 
+     6: 00000000     0 SECTION LOCAL  DEFAULT    6 
+     7: 00000000     0 SECTION LOCAL  DEFAULT    7 
+     8: 00000000     0 SECTION LOCAL  DEFAULT    8 
+     9: 00000000     0 SECTION LOCAL  DEFAULT    9 
+    10: 00000000     0 SECTION LOCAL  DEFAULT   10 
+    11: 00000000     0 SECTION LOCAL  DEFAULT   11 
+    12: 00000000     0 SECTION LOCAL  DEFAULT   12 
+    13: 00000000     0 SECTION LOCAL  DEFAULT   13 
+    14: 00000000     0 FILE    LOCAL  DEFAULT  ABS startup.c
+    15: 08000000     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    16: 0800001c     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    17: 0800008c     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    18: 00000000     0 FILE    LOCAL  DEFAULT  ABS toogle_led.c
+    19: 080000a0     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    20: 08000110     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    21: 0800011c     0 NOTYPE  GLOBAL DEFAULT    1 _E_TEXT
+    22: 0800001d   132 FUNC    GLOBAL DEFAULT    1 NMI_Handler
+    23: 0800001d   132 FUNC    GLOBAL DEFAULT    1 MM_Fault_Handler
+    24: 0800001d   132 FUNC    GLOBAL DEFAULT    1 Reset_Handler
+    25: 20001000     0 NOTYPE  GLOBAL DEFAULT    4 _stack_top
+    26: 20000000     0 NOTYPE  GLOBAL DEFAULT    3 _E_DATA
+    27: 0800001d   132 FUNC    GLOBAL DEFAULT    1 Bus_Fault
+    28: 08000000     0 NOTYPE  GLOBAL DEFAULT    1 _S_TEXT
+    29: 0800001d   132 FUNC    GLOBAL DEFAULT    1 Default_Handler
+    30: 20000000     0 NOTYPE  GLOBAL DEFAULT    4 _E_BSS
+    31: 0800001d   132 FUNC    GLOBAL DEFAULT    1 H_fault_Handler
+    32: 080000a1   124 FUNC    GLOBAL DEFAULT    1 main
+    33: 0800011c     0 NOTYPE  GLOBAL DEFAULT    2 _S_RODATA
+    34: 0800001d   132 FUNC    GLOBAL DEFAULT    1 Usage_Fault_Handler
+    35: 20000000     0 NOTYPE  GLOBAL DEFAULT    3 _S_DATA
+    36: 0800011c     0 NOTYPE  GLOBAL DEFAULT    2 _E_RODATA
+    37: 20000000     0 NOTYPE  GLOBAL DEFAULT    4 _S_BSS
+    38: 08000000    28 OBJECT  GLOBAL DEFAULT    1 vectors
+
+No version information found in this file.
+Attribute Section: aeabi
+File Attributes
+  Tag_CPU_name: "Cortex-M3"
+  Tag_CPU_arch: v7
+  Tag_CPU_arch_profile: Microcontroller
+  Tag_THUMB_ISA_use: Thumb-2
+  Tag_ABI_PCS_wchar_t: 4
+  Tag_ABI_FP_denormal: Needed
+  Tag_ABI_FP_exceptions: Needed
+  Tag_ABI_FP_number_model: IEEE 754
+  Tag_ABI_align_needed: 8-byte
+  Tag_ABI_align_preserved: 8-byte, except leaf SP
+  Tag_ABI_enum_size: small
+  Tag_ABI_optimization_goals: Aggressive Debug
+  Tag_CPU_unaligned_access: v6
