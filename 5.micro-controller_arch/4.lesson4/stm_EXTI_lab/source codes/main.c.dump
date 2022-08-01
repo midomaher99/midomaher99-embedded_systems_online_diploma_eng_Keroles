@@ -1,0 +1,941 @@
+<?xml version="1.0"?>
+<dumps>
+  <platform name="win64" char_bit="8" short_bit="16" int_bit="32" long_bit="32" long_long_bit="64" pointer_bit="64"/>
+  <rawtokens>
+    <file index="0" name="main.c"/>
+    <file index="1" name="init.h"/>
+    <file index="2" name="memory_map.h"/>
+    <tok fileIndex="0" linenr="1" column="1" str="/**x ******************************************************************************x * @file           : main.cx * @author         : ENG/Mohamed Mostafa Maherx * @contactxx   : mohamed.mostafa.maher.999@gmail.comx * @brief          : Simple exercise to enable external interrupts in STM32f103c6x ******************************************************************************x * @attentionx *x * &lt;h2&gt;&lt;center&gt;&amp;copy; Copyright (c) 2022 STMicroelectronics.x * All rights reserved.&lt;/center&gt;&lt;/h2&gt;x *x * This software component is licensed by ST under BSD 3-Clause license,x * the &quot;License&quot;; You may not use this file except in compliance with thex * License. You may obtain a copy of the License at:x *                        opensource.org/licenses/BSD-3-Clausex *x ******************************************************************************x */"/>
+    <tok fileIndex="0" linenr="20" column="1" str="//___________________________________________________________"/>
+    <tok fileIndex="0" linenr="21" column="1" str="//preprocessor"/>
+    <tok fileIndex="0" linenr="22" column="1" str="//___________________________________________________________"/>
+    <tok fileIndex="0" linenr="24" column="1" str="#"/>
+    <tok fileIndex="0" linenr="24" column="2" str="if"/>
+    <tok fileIndex="0" linenr="24" column="5" str="!"/>
+    <tok fileIndex="0" linenr="24" column="6" str="defined"/>
+    <tok fileIndex="0" linenr="24" column="13" str="("/>
+    <tok fileIndex="0" linenr="24" column="14" str="__SOFT_FP__"/>
+    <tok fileIndex="0" linenr="24" column="25" str=")"/>
+    <tok fileIndex="0" linenr="24" column="27" str="&amp;&amp;"/>
+    <tok fileIndex="0" linenr="24" column="30" str="defined"/>
+    <tok fileIndex="0" linenr="24" column="37" str="("/>
+    <tok fileIndex="0" linenr="24" column="38" str="__ARM_FP"/>
+    <tok fileIndex="0" linenr="24" column="46" str=")"/>
+    <tok fileIndex="0" linenr="25" column="3" str="#"/>
+    <tok fileIndex="0" linenr="25" column="4" str="warning"/>
+    <tok fileIndex="0" linenr="25" column="12" str="&quot;FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use.&quot;"/>
+    <tok fileIndex="0" linenr="26" column="1" str="#"/>
+    <tok fileIndex="0" linenr="26" column="2" str="endif"/>
+    <tok fileIndex="0" linenr="28" column="1" str="#"/>
+    <tok fileIndex="0" linenr="28" column="2" str="include"/>
+    <tok fileIndex="0" linenr="28" column="10" str="&quot;init.h&quot;"/>
+    <tok fileIndex="0" linenr="29" column="1" str="#"/>
+    <tok fileIndex="0" linenr="29" column="2" str="include"/>
+    <tok fileIndex="0" linenr="29" column="10" str="&quot;memory_map.h&quot;"/>
+    <tok fileIndex="0" linenr="30" column="1" str="//___________________________________________________________"/>
+    <tok fileIndex="0" linenr="31" column="1" str="//sub-routines"/>
+    <tok fileIndex="0" linenr="32" column="1" str="//___________________________________________________________"/>
+    <tok fileIndex="0" linenr="34" column="1" str="void"/>
+    <tok fileIndex="0" linenr="34" column="6" str="setup"/>
+    <tok fileIndex="0" linenr="34" column="11" str="("/>
+    <tok fileIndex="0" linenr="34" column="12" str=")"/>
+    <tok fileIndex="0" linenr="35" column="1" str="{"/>
+    <tok fileIndex="0" linenr="36" column="2" str="CLOCK_INIT"/>
+    <tok fileIndex="0" linenr="36" column="12" str="("/>
+    <tok fileIndex="0" linenr="36" column="13" str=")"/>
+    <tok fileIndex="0" linenr="36" column="14" str=";"/>
+    <tok fileIndex="0" linenr="37" column="2" str="GPIO_INIT"/>
+    <tok fileIndex="0" linenr="37" column="11" str="("/>
+    <tok fileIndex="0" linenr="37" column="12" str=")"/>
+    <tok fileIndex="0" linenr="37" column="13" str=";"/>
+    <tok fileIndex="0" linenr="38" column="2" str="AFIO_INIT"/>
+    <tok fileIndex="0" linenr="38" column="11" str="("/>
+    <tok fileIndex="0" linenr="38" column="12" str=")"/>
+    <tok fileIndex="0" linenr="38" column="13" str=";"/>
+    <tok fileIndex="0" linenr="39" column="2" str="EXTI_INIT"/>
+    <tok fileIndex="0" linenr="39" column="11" str="("/>
+    <tok fileIndex="0" linenr="39" column="12" str=")"/>
+    <tok fileIndex="0" linenr="39" column="13" str=";"/>
+    <tok fileIndex="0" linenr="40" column="2" str="NVIC_INIT"/>
+    <tok fileIndex="0" linenr="40" column="11" str="("/>
+    <tok fileIndex="0" linenr="40" column="12" str=")"/>
+    <tok fileIndex="0" linenr="40" column="13" str=";"/>
+    <tok fileIndex="0" linenr="41" column="1" str="}"/>
+    <tok fileIndex="0" linenr="42" column="1" str="//_________________________________"/>
+    <tok fileIndex="0" linenr="43" column="1" str="int"/>
+    <tok fileIndex="0" linenr="43" column="5" str="main"/>
+    <tok fileIndex="0" linenr="43" column="9" str="("/>
+    <tok fileIndex="0" linenr="43" column="10" str="void"/>
+    <tok fileIndex="0" linenr="43" column="14" str=")"/>
+    <tok fileIndex="0" linenr="44" column="1" str="{"/>
+    <tok fileIndex="0" linenr="46" column="2" str="setup"/>
+    <tok fileIndex="0" linenr="46" column="7" str="("/>
+    <tok fileIndex="0" linenr="46" column="8" str=")"/>
+    <tok fileIndex="0" linenr="46" column="9" str=";"/>
+    <tok fileIndex="0" linenr="46" column="11" str="//initializations"/>
+    <tok fileIndex="0" linenr="47" column="5" str="while"/>
+    <tok fileIndex="0" linenr="47" column="10" str="("/>
+    <tok fileIndex="0" linenr="47" column="11" str="1"/>
+    <tok fileIndex="0" linenr="47" column="12" str=")"/>
+    <tok fileIndex="0" linenr="48" column="5" str="{"/>
+    <tok fileIndex="0" linenr="50" column="5" str="}"/>
+    <tok fileIndex="0" linenr="51" column="1" str="}"/>
+    <tok fileIndex="0" linenr="52" column="1" str="//_________________________________"/>
+    <tok fileIndex="0" linenr="53" column="1" str="void"/>
+    <tok fileIndex="0" linenr="53" column="6" str="EXTI0_IRQHandler"/>
+    <tok fileIndex="0" linenr="53" column="22" str="("/>
+    <tok fileIndex="0" linenr="53" column="23" str=")"/>
+    <tok fileIndex="0" linenr="54" column="1" str="{"/>
+    <tok fileIndex="0" linenr="55" column="2" str="GPIOA"/>
+    <tok fileIndex="0" linenr="55" column="7" str="-&gt;"/>
+    <tok fileIndex="0" linenr="55" column="9" str="ODR"/>
+    <tok fileIndex="0" linenr="55" column="13" str="^="/>
+    <tok fileIndex="0" linenr="55" column="16" str="("/>
+    <tok fileIndex="0" linenr="55" column="17" str="int"/>
+    <tok fileIndex="0" linenr="55" column="20" str="*"/>
+    <tok fileIndex="0" linenr="55" column="21" str=")"/>
+    <tok fileIndex="0" linenr="55" column="22" str="1u"/>
+    <tok fileIndex="0" linenr="55" column="24" str="&lt;&lt;"/>
+    <tok fileIndex="0" linenr="55" column="26" str="13"/>
+    <tok fileIndex="0" linenr="55" column="28" str=";"/>
+    <tok fileIndex="0" linenr="56" column="2" str="EXTI"/>
+    <tok fileIndex="0" linenr="56" column="6" str="-&gt;"/>
+    <tok fileIndex="0" linenr="56" column="8" str="PR"/>
+    <tok fileIndex="0" linenr="56" column="11" str="|="/>
+    <tok fileIndex="0" linenr="56" column="14" str="1u"/>
+    <tok fileIndex="0" linenr="56" column="16" str="&lt;&lt;"/>
+    <tok fileIndex="0" linenr="56" column="18" str="0"/>
+    <tok fileIndex="0" linenr="56" column="19" str=";"/>
+    <tok fileIndex="0" linenr="57" column="1" str="}"/>
+  </rawtokens>
+  <suppressions>
+  </suppressions>
+<dump cfg="">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="main.c" linenr="24" str="#if !defined(__SOFT_FP__) &amp;&amp; defined(__ARM_FP)"/>
+    <directive file="main.c" linenr="25" str="#warning &quot;FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use.&quot;"/>
+    <directive file="main.c" linenr="26" str="#endif"/>
+    <directive file="main.c" linenr="28" str="#include &quot;init.h&quot;"/>
+    <directive file="main.c" linenr="29" str="#include &quot;memory_map.h&quot;"/>
+    <directive file="init.h" linenr="8" str="#ifndef INIT_H_"/>
+    <directive file="init.h" linenr="9" str="#define INIT_H_"/>
+    <directive file="init.h" linenr="46" str="#endif"/>
+    <directive file="memory_map.h" linenr="9" str="#ifndef MEMORY_MAP_H_"/>
+    <directive file="memory_map.h" linenr="10" str="#define MEMORY_MAP_H_"/>
+    <directive file="memory_map.h" linenr="12" str="#include &quot;stdint.h&quot;"/>
+    <directive file="memory_map.h" linenr="14" str="#define AFIO_BASE 0x40010000"/>
+    <directive file="memory_map.h" linenr="15" str="#define EXTI_BASE 0x40010400"/>
+    <directive file="memory_map.h" linenr="16" str="#define GPIOA_BASE 0x40010800"/>
+    <directive file="memory_map.h" linenr="17" str="#define RCC_BASE 0x40021000"/>
+    <directive file="memory_map.h" linenr="64" str="#define AFIO ((AFIO_type*)AFIO_BASE)"/>
+    <directive file="memory_map.h" linenr="65" str="#define EXTI ((EXTI_type*)EXTI_BASE)"/>
+    <directive file="memory_map.h" linenr="66" str="#define GPIOA ((GPIO_type*)GPIOA_BASE)"/>
+    <directive file="memory_map.h" linenr="67" str="#define RCC ((RCC_type*)RCC_BASE)"/>
+    <directive file="memory_map.h" linenr="68" str="#endif"/>
+  </directivelist>
+  <tokenlist>
+    <token id="0000012D5CD71280" file="init.h" linenr="16" column="1" str="extern" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CD70CE0" file="init.h" linenr="16" column="8" str="void" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CD70D40" file="init.h" linenr="16" column="13" str="CLOCK_INIT" scope="0000012D5C834DB0" type="name" function="0000012D5CC389A0"/>
+    <token id="0000012D5CD71040" file="init.h" linenr="16" column="23" str="(" scope="0000012D5C834DB0" link="0000012D5CD70EC0" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CD70EC0" file="init.h" linenr="16" column="24" str=")" scope="0000012D5C834DB0" link="0000012D5CD71040"/>
+    <token id="0000012D5CD712E0" file="init.h" linenr="16" column="25" str=";" scope="0000012D5C834DB0"/>
+    <token id="0000012D5CD710A0" file="init.h" linenr="23" column="1" str="extern" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CD70DA0" file="init.h" linenr="23" column="8" str="void" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CD70F20" file="init.h" linenr="23" column="13" str="GPIO_INIT" scope="0000012D5C834DB0" type="name" function="0000012D5CC38B80"/>
+    <token id="0000012D5CD70F80" file="init.h" linenr="23" column="22" str="(" scope="0000012D5C834DB0" link="0000012D5CD711C0" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CD711C0" file="init.h" linenr="23" column="23" str=")" scope="0000012D5C834DB0" link="0000012D5CD70F80"/>
+    <token id="0000012D5CD70FE0" file="init.h" linenr="23" column="24" str=";" scope="0000012D5C834DB0"/>
+    <token id="0000012D5CD70C80" file="init.h" linenr="30" column="1" str="extern" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CD71340" file="init.h" linenr="30" column="8" str="void" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CD71100" file="init.h" linenr="30" column="13" str="AFIO_INIT" scope="0000012D5C834DB0" type="name" function="0000012D5CC38860"/>
+    <token id="0000012D5CD71160" file="init.h" linenr="30" column="22" str="(" scope="0000012D5C834DB0" link="0000012D5CD70C20" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CD70C20" file="init.h" linenr="30" column="23" str=")" scope="0000012D5C834DB0" link="0000012D5CD71160"/>
+    <token id="0000012D5CF97FA0" file="init.h" linenr="30" column="24" str=";" scope="0000012D5C834DB0"/>
+    <token id="0000012D5CF98060" file="init.h" linenr="37" column="1" str="extern" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CF980C0" file="init.h" linenr="37" column="8" str="void" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CF98300" file="init.h" linenr="37" column="13" str="EXTI_INIT" scope="0000012D5C834DB0" type="name" function="0000012D5CC38E00"/>
+    <token id="0000012D5CF98840" file="init.h" linenr="37" column="22" str="(" scope="0000012D5C834DB0" link="0000012D5CF98360" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CF98360" file="init.h" linenr="37" column="23" str=")" scope="0000012D5C834DB0" link="0000012D5CF98840"/>
+    <token id="0000012D5CF983C0" file="init.h" linenr="37" column="24" str=";" scope="0000012D5C834DB0"/>
+    <token id="0000012D5CF97940" file="init.h" linenr="44" column="1" str="extern" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CF98480" file="init.h" linenr="44" column="8" str="void" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CF92080" file="init.h" linenr="44" column="13" str="NVIC_INIT" scope="0000012D5C834DB0" type="name" function="0000012D5CC38C20"/>
+    <token id="0000012D5CF92020" file="init.h" linenr="44" column="22" str="(" scope="0000012D5C834DB0" link="0000012D5CF91C60" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CF91C60" file="init.h" linenr="44" column="23" str=")" scope="0000012D5C834DB0" link="0000012D5CF92020"/>
+    <token id="0000012D5CF91D80" file="init.h" linenr="44" column="24" str=";" scope="0000012D5C834DB0"/>
+    <token id="0000012D5CF91960" file="memory_map.h" linenr="20" column="9" str="struct" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5D29A490" file="memory_map.h" linenr="20" column="0" str="AFIO_type" scope="0000012D5C834DB0" type="name" type-scope="0000012D5C834FD0"/>
+    <token id="0000012D5CF91840" file="memory_map.h" linenr="20" column="15" str="{" scope="0000012D5C834FD0" link="0000012D5CF92620"/>
+    <token id="0000012D5CF918A0" file="memory_map.h" linenr="21" column="2" str="volatile" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF91A20" file="memory_map.h" linenr="21" column="11" str="uint32_t" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF92440" file="memory_map.h" linenr="21" column="20" str="EVCR" scope="0000012D5C834FD0" type="name" varId="1" variable="0000012D5CF14D60" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF921A0" file="memory_map.h" linenr="21" column="24" str=";" scope="0000012D5C834FD0"/>
+    <token id="0000012D5CF91900" file="memory_map.h" linenr="22" column="2" str="volatile" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF92500" file="memory_map.h" linenr="22" column="11" str="uint32_t" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF91CC0" file="memory_map.h" linenr="22" column="20" str="MAPR" scope="0000012D5C834FD0" type="name" varId="2" variable="0000012D5CF13A20" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF91EA0" file="memory_map.h" linenr="22" column="24" str=";" scope="0000012D5C834FD0"/>
+    <token id="0000012D5CF91F60" file="memory_map.h" linenr="23" column="2" str="volatile" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF920E0" file="memory_map.h" linenr="23" column="11" str="uint32_t" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF91FC0" file="memory_map.h" linenr="23" column="20" str="EXTICR1" scope="0000012D5C834FD0" type="name" varId="3" variable="0000012D5CF14660" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF923E0" file="memory_map.h" linenr="23" column="27" str=";" scope="0000012D5C834FD0"/>
+    <token id="0000012D5CF92320" file="memory_map.h" linenr="24" column="2" str="volatile" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF92140" file="memory_map.h" linenr="24" column="11" str="uint32_t" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF92380" file="memory_map.h" linenr="24" column="20" str="EXTICR2" scope="0000012D5C834FD0" type="name" varId="4" variable="0000012D5CF13C50" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF91D20" file="memory_map.h" linenr="24" column="27" str=";" scope="0000012D5C834FD0"/>
+    <token id="0000012D5CF92560" file="memory_map.h" linenr="25" column="2" str="volatile" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF92200" file="memory_map.h" linenr="25" column="11" str="uint32_t" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF91F00" file="memory_map.h" linenr="25" column="20" str="EXTICR3" scope="0000012D5C834FD0" type="name" varId="5" variable="0000012D5CF13860" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF92260" file="memory_map.h" linenr="25" column="27" str=";" scope="0000012D5C834FD0"/>
+    <token id="0000012D5CF924A0" file="memory_map.h" linenr="26" column="2" str="volatile" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF91780" file="memory_map.h" linenr="26" column="11" str="uint32_t" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF925C0" file="memory_map.h" linenr="26" column="20" str="EXTICR4" scope="0000012D5C834FD0" type="name" varId="6" variable="0000012D5CF13CC0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF91A80" file="memory_map.h" linenr="26" column="27" str=";" scope="0000012D5C834FD0"/>
+    <token id="0000012D5CF91B40" file="memory_map.h" linenr="27" column="2" str="volatile" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF919C0" file="memory_map.h" linenr="27" column="11" str="uint32_t" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF922C0" file="memory_map.h" linenr="27" column="20" str="MAPR2" scope="0000012D5C834FD0" type="name" varId="7" variable="0000012D5CF14120" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF91AE0" file="memory_map.h" linenr="27" column="25" str=";" scope="0000012D5C834FD0"/>
+    <token id="0000012D5CF92620" file="memory_map.h" linenr="28" column="1" str="}" scope="0000012D5C834FD0" link="0000012D5CF91840"/>
+    <token id="0000012D5D29A550" file="memory_map.h" linenr="28" column="0" str=";" scope="0000012D5C834DB0"/>
+    <token id="0000012D5CF91C00" file="memory_map.h" linenr="30" column="9" str="struct" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5D29B4B0" file="memory_map.h" linenr="30" column="0" str="EXTI_type" scope="0000012D5C834DB0" type="name" type-scope="0000012D5C834750"/>
+    <token id="0000012D5CF91E40" file="memory_map.h" linenr="30" column="15" str="{" scope="0000012D5C834750" link="0000012D5CD69BC0"/>
+    <token id="0000012D5CD69740" file="memory_map.h" linenr="31" column="2" str="volatile" scope="0000012D5C834750" type="name"/>
+    <token id="0000012D5CD69140" file="memory_map.h" linenr="31" column="11" str="uint32_t" scope="0000012D5C834750" type="name"/>
+    <token id="0000012D5CD693E0" file="memory_map.h" linenr="31" column="20" str="IMR" scope="0000012D5C834750" type="name" varId="8" variable="0000012D5CF135C0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CD691A0" file="memory_map.h" linenr="31" column="23" str=";" scope="0000012D5C834750"/>
+    <token id="0000012D5CD69EC0" file="memory_map.h" linenr="32" column="2" str="volatile" scope="0000012D5C834750" type="name"/>
+    <token id="0000012D5CD69C80" file="memory_map.h" linenr="32" column="11" str="uint32_t" scope="0000012D5C834750" type="name"/>
+    <token id="0000012D5CD697A0" file="memory_map.h" linenr="32" column="20" str="EMR" scope="0000012D5C834750" type="name" varId="9" variable="0000012D5CF14740" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CD69800" file="memory_map.h" linenr="32" column="23" str=";" scope="0000012D5C834750"/>
+    <token id="0000012D5CD69B60" file="memory_map.h" linenr="33" column="2" str="volatile" scope="0000012D5C834750" type="name"/>
+    <token id="0000012D5CD69D40" file="memory_map.h" linenr="33" column="11" str="uint32_t" scope="0000012D5C834750" type="name"/>
+    <token id="0000012D5CD696E0" file="memory_map.h" linenr="33" column="20" str="RSTR" scope="0000012D5C834750" type="name" varId="10" variable="0000012D5CF14350" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CD69DA0" file="memory_map.h" linenr="33" column="24" str=";" scope="0000012D5C834750"/>
+    <token id="0000012D5CD69AA0" file="memory_map.h" linenr="34" column="2" str="volatile" scope="0000012D5C834750" type="name"/>
+    <token id="0000012D5CD69860" file="memory_map.h" linenr="34" column="11" str="uint32_t" scope="0000012D5C834750" type="name"/>
+    <token id="0000012D5CD699E0" file="memory_map.h" linenr="34" column="20" str="FSTR" scope="0000012D5C834750" type="name" varId="11" variable="0000012D5CF14190" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CD69200" file="memory_map.h" linenr="34" column="24" str=";" scope="0000012D5C834750"/>
+    <token id="0000012D5CD69F20" file="memory_map.h" linenr="35" column="2" str="volatile" scope="0000012D5C834750" type="name"/>
+    <token id="0000012D5CD69380" file="memory_map.h" linenr="35" column="11" str="uint32_t" scope="0000012D5C834750" type="name"/>
+    <token id="0000012D5CD69F80" file="memory_map.h" linenr="35" column="20" str="SWIER" scope="0000012D5C834750" type="name" varId="12" variable="0000012D5CF15000" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CD69C20" file="memory_map.h" linenr="35" column="25" str=";" scope="0000012D5C834750"/>
+    <token id="0000012D5CD69260" file="memory_map.h" linenr="36" column="2" str="volatile" scope="0000012D5C834750" type="name"/>
+    <token id="0000012D5CD692C0" file="memory_map.h" linenr="36" column="11" str="uint32_t" scope="0000012D5C834750" type="name"/>
+    <token id="0000012D5CD698C0" file="memory_map.h" linenr="36" column="20" str="PR" scope="0000012D5C834750" type="name" varId="13" variable="0000012D5CF13B70" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CD69CE0" file="memory_map.h" linenr="36" column="22" str=";" scope="0000012D5C834750"/>
+    <token id="0000012D5CD69BC0" file="memory_map.h" linenr="37" column="1" str="}" scope="0000012D5C834750" link="0000012D5CF91E40"/>
+    <token id="0000012D5D29A8B0" file="memory_map.h" linenr="37" column="0" str=";" scope="0000012D5C834DB0"/>
+    <token id="0000012D5CD69320" file="memory_map.h" linenr="40" column="9" str="struct" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5D29B630" file="memory_map.h" linenr="40" column="0" str="GPIO_type" scope="0000012D5C834DB0" type="name" type-scope="0000012D5C834CA0"/>
+    <token id="0000012D5CD69500" file="memory_map.h" linenr="40" column="15" str="{" scope="0000012D5C834CA0" link="0000012D5CF59510"/>
+    <token id="0000012D5CD69080" file="memory_map.h" linenr="41" column="2" str="volatile" scope="0000012D5C834CA0" type="name"/>
+    <token id="0000012D5CD69440" file="memory_map.h" linenr="41" column="11" str="uint32_t" scope="0000012D5C834CA0" type="name"/>
+    <token id="0000012D5CD694A0" file="memory_map.h" linenr="41" column="20" str="CRL" scope="0000012D5C834CA0" type="name" varId="14" variable="0000012D5CF139B0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CD69B00" file="memory_map.h" linenr="41" column="23" str=";" scope="0000012D5C834CA0"/>
+    <token id="0000012D5CD69E00" file="memory_map.h" linenr="42" column="2" str="volatile" scope="0000012D5C834CA0" type="name"/>
+    <token id="0000012D5CD690E0" file="memory_map.h" linenr="42" column="11" str="uint32_t" scope="0000012D5C834CA0" type="name"/>
+    <token id="0000012D5CD69560" file="memory_map.h" linenr="42" column="20" str="CRH" scope="0000012D5C834CA0" type="name" varId="15" variable="0000012D5CF13B00" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CD695C0" file="memory_map.h" linenr="42" column="23" str=";" scope="0000012D5C834CA0"/>
+    <token id="0000012D5CD69620" file="memory_map.h" linenr="43" column="2" str="volatile" scope="0000012D5C834CA0" type="name"/>
+    <token id="0000012D5CD69680" file="memory_map.h" linenr="43" column="11" str="uint32_t" scope="0000012D5C834CA0" type="name"/>
+    <token id="0000012D5CD69E60" file="memory_map.h" linenr="43" column="20" str="IDR" scope="0000012D5C834CA0" type="name" varId="16" variable="0000012D5CF13D30" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF59030" file="memory_map.h" linenr="43" column="23" str=";" scope="0000012D5C834CA0"/>
+    <token id="0000012D5CF58970" file="memory_map.h" linenr="44" column="2" str="volatile" scope="0000012D5C834CA0" type="name"/>
+    <token id="0000012D5CF58B50" file="memory_map.h" linenr="44" column="11" str="uint32_t" scope="0000012D5C834CA0" type="name"/>
+    <token id="0000012D5CF58A90" file="memory_map.h" linenr="44" column="20" str="ODR" scope="0000012D5C834CA0" type="name" varId="17" variable="0000012D5CF13E80" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF590F0" file="memory_map.h" linenr="44" column="23" str=";" scope="0000012D5C834CA0"/>
+    <token id="0000012D5CF58F70" file="memory_map.h" linenr="45" column="2" str="volatile" scope="0000012D5C834CA0" type="name"/>
+    <token id="0000012D5CF59750" file="memory_map.h" linenr="45" column="11" str="uint32_t" scope="0000012D5C834CA0" type="name"/>
+    <token id="0000012D5CF597B0" file="memory_map.h" linenr="45" column="20" str="BSRR" scope="0000012D5C834CA0" type="name" varId="18" variable="0000012D5CF168F0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF59210" file="memory_map.h" linenr="45" column="24" str=";" scope="0000012D5C834CA0"/>
+    <token id="0000012D5CF59690" file="memory_map.h" linenr="46" column="2" str="volatile" scope="0000012D5C834CA0" type="name"/>
+    <token id="0000012D5CF58C10" file="memory_map.h" linenr="46" column="11" str="uint32_t" scope="0000012D5C834CA0" type="name"/>
+    <token id="0000012D5CF58AF0" file="memory_map.h" linenr="46" column="20" str="BRR" scope="0000012D5C834CA0" type="name" varId="19" variable="0000012D5CF154D0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF58DF0" file="memory_map.h" linenr="46" column="23" str=";" scope="0000012D5C834CA0"/>
+    <token id="0000012D5CF58BB0" file="memory_map.h" linenr="47" column="2" str="volatile" scope="0000012D5C834CA0" type="name"/>
+    <token id="0000012D5CF59450" file="memory_map.h" linenr="47" column="11" str="uint32_t" scope="0000012D5C834CA0" type="name"/>
+    <token id="0000012D5CF59090" file="memory_map.h" linenr="47" column="20" str="LCKR" scope="0000012D5C834CA0" type="name" varId="20" variable="0000012D5CF16AB0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF58D30" file="memory_map.h" linenr="47" column="24" str=";" scope="0000012D5C834CA0"/>
+    <token id="0000012D5CF59510" file="memory_map.h" linenr="48" column="1" str="}" scope="0000012D5C834CA0" link="0000012D5CD69500"/>
+    <token id="0000012D5D29B690" file="memory_map.h" linenr="48" column="0" str=";" scope="0000012D5C834DB0"/>
+    <token id="0000012D5CF592D0" file="memory_map.h" linenr="50" column="9" str="struct" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5D29B0F0" file="memory_map.h" linenr="50" column="0" str="RCC_type" scope="0000012D5C834DB0" type="name" type-scope="0000012D5C834860"/>
+    <token id="0000012D5CF58910" file="memory_map.h" linenr="50" column="15" str="{" scope="0000012D5C834860" link="0000012D5CF5AB60"/>
+    <token id="0000012D5CF58CD0" file="memory_map.h" linenr="51" column="2" str="volatile" scope="0000012D5C834860" type="name"/>
+    <token id="0000012D5CF59570" file="memory_map.h" linenr="51" column="11" str="uint32_t" scope="0000012D5C834860" type="name"/>
+    <token id="0000012D5CF58FD0" file="memory_map.h" linenr="51" column="20" str="CR" scope="0000012D5C834860" type="name" varId="21" variable="0000012D5CF15A80" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF591B0" file="memory_map.h" linenr="51" column="22" str=";" scope="0000012D5C834860"/>
+    <token id="0000012D5CF58F10" file="memory_map.h" linenr="52" column="2" str="volatile" scope="0000012D5C834860" type="name"/>
+    <token id="0000012D5CF58D90" file="memory_map.h" linenr="52" column="11" str="uint32_t" scope="0000012D5C834860" type="name"/>
+    <token id="0000012D5CF58E50" file="memory_map.h" linenr="52" column="20" str="CFGR" scope="0000012D5C834860" type="name" varId="22" variable="0000012D5CF16030" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF58EB0" file="memory_map.h" linenr="52" column="24" str=";" scope="0000012D5C834860"/>
+    <token id="0000012D5CF59330" file="memory_map.h" linenr="53" column="2" str="volatile" scope="0000012D5C834860" type="name"/>
+    <token id="0000012D5CF596F0" file="memory_map.h" linenr="53" column="11" str="uint32_t" scope="0000012D5C834860" type="name"/>
+    <token id="0000012D5CF594B0" file="memory_map.h" linenr="53" column="20" str="CIR" scope="0000012D5C834860" type="name" varId="23" variable="0000012D5CF15850" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF59390" file="memory_map.h" linenr="53" column="23" str=";" scope="0000012D5C834860"/>
+    <token id="0000012D5CF593F0" file="memory_map.h" linenr="54" column="2" str="volatile" scope="0000012D5C834860" type="name"/>
+    <token id="0000012D5CF595D0" file="memory_map.h" linenr="54" column="11" str="uint32_t" scope="0000012D5C834860" type="name"/>
+    <token id="0000012D5CF59630" file="memory_map.h" linenr="54" column="20" str="APB2BRSTR" scope="0000012D5C834860" type="name" varId="24" variable="0000012D5CF16880" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF59810" file="memory_map.h" linenr="54" column="29" str=";" scope="0000012D5C834860"/>
+    <token id="0000012D5CF589D0" file="memory_map.h" linenr="55" column="2" str="volatile" scope="0000012D5C834860" type="name"/>
+    <token id="0000012D5CF58A30" file="memory_map.h" linenr="55" column="11" str="uint32_t" scope="0000012D5C834860" type="name"/>
+    <token id="0000012D5CF5ADA0" file="memory_map.h" linenr="55" column="20" str="APB1BRSTR" scope="0000012D5C834860" type="name" varId="25" variable="0000012D5CF151C0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF5AE00" file="memory_map.h" linenr="55" column="29" str=";" scope="0000012D5C834860"/>
+    <token id="0000012D5CF5BD00" file="memory_map.h" linenr="56" column="2" str="volatile" scope="0000012D5C834860" type="name"/>
+    <token id="0000012D5CF5AF80" file="memory_map.h" linenr="56" column="11" str="uint32_t" scope="0000012D5C834860" type="name"/>
+    <token id="0000012D5CF5AFE0" file="memory_map.h" linenr="56" column="20" str="AHBENR" scope="0000012D5C834860" type="name" varId="26" variable="0000012D5CF16B20" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF5BB20" file="memory_map.h" linenr="56" column="26" str=";" scope="0000012D5C834860"/>
+    <token id="0000012D5CF5B040" file="memory_map.h" linenr="57" column="2" str="volatile" scope="0000012D5C834860" type="name"/>
+    <token id="0000012D5CF5B0A0" file="memory_map.h" linenr="57" column="11" str="uint32_t" scope="0000012D5C834860" type="name"/>
+    <token id="0000012D5CF5BCA0" file="memory_map.h" linenr="57" column="20" str="APB2ENR" scope="0000012D5C834860" type="name" varId="27" variable="0000012D5CF166C0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF5B100" file="memory_map.h" linenr="57" column="27" str=";" scope="0000012D5C834860"/>
+    <token id="0000012D5CF5A980" file="memory_map.h" linenr="58" column="2" str="volatile" scope="0000012D5C834860" type="name"/>
+    <token id="0000012D5CF5B4C0" file="memory_map.h" linenr="58" column="11" str="uint32_t" scope="0000012D5C834860" type="name"/>
+    <token id="0000012D5CF5C0C0" file="memory_map.h" linenr="58" column="20" str="APB1ENR" scope="0000012D5C834860" type="name" varId="28" variable="0000012D5CF162D0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF5B520" file="memory_map.h" linenr="58" column="27" str=";" scope="0000012D5C834860"/>
+    <token id="0000012D5CF5BF40" file="memory_map.h" linenr="59" column="2" str="volatile" scope="0000012D5C834860" type="name"/>
+    <token id="0000012D5CF5B460" file="memory_map.h" linenr="59" column="11" str="uint32_t" scope="0000012D5C834860" type="name"/>
+    <token id="0000012D5CF5B820" file="memory_map.h" linenr="59" column="20" str="BDCR" scope="0000012D5C834860" type="name" varId="29" variable="0000012D5CF15E70" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF5B700" file="memory_map.h" linenr="59" column="24" str=";" scope="0000012D5C834860"/>
+    <token id="0000012D5CF5B160" file="memory_map.h" linenr="60" column="2" str="volatile" scope="0000012D5C834860" type="name"/>
+    <token id="0000012D5CF5B340" file="memory_map.h" linenr="60" column="11" str="uint32_t" scope="0000012D5C834860" type="name"/>
+    <token id="0000012D5CF5ACE0" file="memory_map.h" linenr="60" column="20" str="CSR" scope="0000012D5C834860" type="name" varId="30" variable="0000012D5CF167A0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF5AA40" file="memory_map.h" linenr="60" column="23" str=";" scope="0000012D5C834860"/>
+    <token id="0000012D5CF5AB60" file="memory_map.h" linenr="61" column="1" str="}" scope="0000012D5C834860" link="0000012D5CF58910"/>
+    <token id="0000012D5D29B6F0" file="memory_map.h" linenr="61" column="0" str=";" scope="0000012D5C834DB0"/>
+    <token id="0000012D5CF5BDC0" file="main.c" linenr="34" column="1" str="void" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CF5B9A0" file="main.c" linenr="34" column="6" str="setup" scope="0000012D5C834DB0" type="name" function="0000012D5D2DFA10"/>
+    <token id="0000012D5CF5AAA0" file="main.c" linenr="34" column="11" str="(" scope="0000012D5C834DB0" link="0000012D5CF5BFA0" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CF5BFA0" file="main.c" linenr="34" column="12" str=")" scope="0000012D5C834DB0" link="0000012D5CF5AAA0"/>
+    <token id="0000012D5CF5B1C0" file="main.c" linenr="35" column="1" str="{" scope="0000012D5C8351F0" link="0000012D5CF5AC20"/>
+    <token id="0000012D5CF5B580" file="main.c" linenr="36" column="2" str="CLOCK_INIT" scope="0000012D5C8351F0" type="name" function="0000012D5CC389A0" astParent="0000012D5CF5B640"/>
+    <token id="0000012D5CF5B640" file="main.c" linenr="36" column="12" str="(" scope="0000012D5C8351F0" link="0000012D5CF5B880" astOperand1="0000012D5CF5B580" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CF5B880" file="main.c" linenr="36" column="13" str=")" scope="0000012D5C8351F0" link="0000012D5CF5B640"/>
+    <token id="0000012D5CF5B6A0" file="main.c" linenr="36" column="14" str=";" scope="0000012D5C8351F0"/>
+    <token id="0000012D5CF5BD60" file="main.c" linenr="37" column="2" str="GPIO_INIT" scope="0000012D5C8351F0" type="name" function="0000012D5CC38B80" astParent="0000012D5CF5BBE0"/>
+    <token id="0000012D5CF5BBE0" file="main.c" linenr="37" column="11" str="(" scope="0000012D5C8351F0" link="0000012D5CF5B8E0" astOperand1="0000012D5CF5BD60" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CF5B8E0" file="main.c" linenr="37" column="12" str=")" scope="0000012D5C8351F0" link="0000012D5CF5BBE0"/>
+    <token id="0000012D5CF5BC40" file="main.c" linenr="37" column="13" str=";" scope="0000012D5C8351F0"/>
+    <token id="0000012D5CF5B220" file="main.c" linenr="38" column="2" str="AFIO_INIT" scope="0000012D5C8351F0" type="name" function="0000012D5CC38860" astParent="0000012D5CF5C000"/>
+    <token id="0000012D5CF5C000" file="main.c" linenr="38" column="11" str="(" scope="0000012D5C8351F0" link="0000012D5CF5B940" astOperand1="0000012D5CF5B220" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CF5B940" file="main.c" linenr="38" column="12" str=")" scope="0000012D5C8351F0" link="0000012D5CF5C000"/>
+    <token id="0000012D5CF5B5E0" file="main.c" linenr="38" column="13" str=";" scope="0000012D5C8351F0"/>
+    <token id="0000012D5CF5BA00" file="main.c" linenr="39" column="2" str="EXTI_INIT" scope="0000012D5C8351F0" type="name" function="0000012D5CC38E00" astParent="0000012D5CF5BE20"/>
+    <token id="0000012D5CF5BE20" file="main.c" linenr="39" column="11" str="(" scope="0000012D5C8351F0" link="0000012D5CF5A9E0" astOperand1="0000012D5CF5BA00" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CF5A9E0" file="main.c" linenr="39" column="12" str=")" scope="0000012D5C8351F0" link="0000012D5CF5BE20"/>
+    <token id="0000012D5CF5BE80" file="main.c" linenr="39" column="13" str=";" scope="0000012D5C8351F0"/>
+    <token id="0000012D5CF5AEC0" file="main.c" linenr="40" column="2" str="NVIC_INIT" scope="0000012D5C8351F0" type="name" function="0000012D5CC38C20" astParent="0000012D5CF5B280"/>
+    <token id="0000012D5CF5B280" file="main.c" linenr="40" column="11" str="(" scope="0000012D5C8351F0" link="0000012D5CF5ABC0" astOperand1="0000012D5CF5AEC0" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CF5ABC0" file="main.c" linenr="40" column="12" str=")" scope="0000012D5C8351F0" link="0000012D5CF5B280"/>
+    <token id="0000012D5CF5BA60" file="main.c" linenr="40" column="13" str=";" scope="0000012D5C8351F0"/>
+    <token id="0000012D5CF5AC20" file="main.c" linenr="41" column="1" str="}" scope="0000012D5C8351F0" link="0000012D5CF5B1C0"/>
+    <token id="0000012D5CF5B760" file="main.c" linenr="43" column="1" str="int" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CF5AF20" file="main.c" linenr="43" column="5" str="main" scope="0000012D5C834DB0" type="name" function="0000012D5D2DFB50"/>
+    <token id="0000012D5CF5B7C0" file="main.c" linenr="43" column="9" str="(" scope="0000012D5C834DB0" link="0000012D5CF5AC80" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000012D5CF5AC80" file="main.c" linenr="43" column="14" str=")" scope="0000012D5C834DB0" link="0000012D5CF5B7C0"/>
+    <token id="0000012D5CF5BAC0" file="main.c" linenr="44" column="1" str="{" scope="0000012D5C8350E0" link="0000012D5CF5C360"/>
+    <token id="0000012D5CF5B2E0" file="main.c" linenr="46" column="2" str="setup" scope="0000012D5C8350E0" type="name" function="0000012D5D2DFA10" astParent="0000012D5CF5B3A0"/>
+    <token id="0000012D5CF5B3A0" file="main.c" linenr="46" column="7" str="(" scope="0000012D5C8350E0" link="0000012D5CF5BB80" astOperand1="0000012D5CF5B2E0" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CF5BB80" file="main.c" linenr="46" column="8" str=")" scope="0000012D5C8350E0" link="0000012D5CF5B3A0"/>
+    <token id="0000012D5CF5C060" file="main.c" linenr="46" column="9" str=";" scope="0000012D5C8350E0"/>
+    <token id="0000012D5CF5BEE0" file="main.c" linenr="47" column="5" str="while" scope="0000012D5C8350E0" type="name" astParent="0000012D5CF5A920"/>
+    <token id="0000012D5CF5A920" file="main.c" linenr="47" column="10" str="(" scope="0000012D5C8350E0" link="0000012D5CF5C240" astOperand1="0000012D5CF5BEE0" astOperand2="0000012D5CF5B400"/>
+    <token id="0000012D5CF5B400" file="main.c" linenr="47" column="11" str="1" scope="0000012D5C8350E0" type="number" isInt="true" values="0000012D5C88C590" astParent="0000012D5CF5A920" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000012D5CF5C240" file="main.c" linenr="47" column="12" str=")" scope="0000012D5C8350E0" link="0000012D5CF5A920"/>
+    <token id="0000012D5CF5C4E0" file="main.c" linenr="48" column="5" str="{" scope="0000012D5C834A80" link="0000012D5CF5C2A0"/>
+    <token id="0000012D5CF5C2A0" file="main.c" linenr="50" column="5" str="}" scope="0000012D5C834A80" link="0000012D5CF5C4E0"/>
+    <token id="0000012D5CF5C360" file="main.c" linenr="51" column="1" str="}" scope="0000012D5C8350E0" link="0000012D5CF5BAC0"/>
+    <token id="0000012D5CF5C3C0" file="main.c" linenr="53" column="1" str="void" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CF5C600" file="main.c" linenr="53" column="6" str="EXTI0_IRQHandler" scope="0000012D5C834DB0" type="name" function="0000012D5D2DEC50"/>
+    <token id="0000012D5CF5C420" file="main.c" linenr="53" column="22" str="(" scope="0000012D5C834DB0" link="0000012D5CF5C300" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CF5C300" file="main.c" linenr="53" column="23" str=")" scope="0000012D5C834DB0" link="0000012D5CF5C420"/>
+    <token id="0000012D5CF5C6C0" file="main.c" linenr="54" column="1" str="{" scope="0000012D5C835520" link="0000012D5D29A430"/>
+    <token id="0000012D5CF5C5A0" file="main.c" linenr="55" column="2" str="(" scope="0000012D5C835520" isExpandedMacro="true" link="0000012D5CF5C840"/>
+    <token id="0000012D5CF5C7E0" file="main.c" linenr="55" column="2" str="(" scope="0000012D5C835520" isExpandedMacro="true" link="0000012D5CF5C720" values="0000012D5C88C910" astParent="0000012D5CF5C120" astOperand1="0000012D5CF5C780" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000012D5C834CA0"/>
+    <token id="0000012D5CF5C540" file="main.c" linenr="55" column="2" str="GPIO_type" scope="0000012D5C835520" type="name" isExpandedMacro="true" type-scope="0000012D5C834CA0"/>
+    <token id="0000012D5CF5C660" file="main.c" linenr="55" column="2" str="*" scope="0000012D5C835520" type="op" isArithmeticalOp="true" isExpandedMacro="true"/>
+    <token id="0000012D5CF5C720" file="main.c" linenr="55" column="2" str=")" scope="0000012D5C835520" isExpandedMacro="true" link="0000012D5CF5C7E0"/>
+    <token id="0000012D5CF5C780" file="main.c" linenr="55" column="2" str="0x40010800" scope="0000012D5C835520" type="number" isInt="true" isExpandedMacro="true" values="0000012D5C88CB90" astParent="0000012D5CF5C7E0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000012D5CF5C840" file="main.c" linenr="55" column="2" str=")" scope="0000012D5C835520" isExpandedMacro="true" link="0000012D5CF5C5A0"/>
+    <token id="0000012D5CF5C120" file="main.c" linenr="55" column="7" str="." scope="0000012D5C835520" astParent="0000012D5CF5C1E0" astOperand1="0000012D5CF5C7E0" astOperand2="0000012D5CF5C180" originalName="->" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF5C180" file="main.c" linenr="55" column="9" str="ODR" scope="0000012D5C835520" type="name" astParent="0000012D5CF5C120"/>
+    <token id="0000012D5CF5C1E0" file="main.c" linenr="55" column="13" str="^=" scope="0000012D5C835520" type="op" isAssignmentOp="true" astOperand1="0000012D5CF5C120" astOperand2="0000012D5D29B510" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF5C480" file="main.c" linenr="55" column="16" str="(" scope="0000012D5C835520" link="0000012D5D29B2D0" values="0000012D5C88CAB0" astParent="0000012D5D29B510" astOperand1="0000012D5D29A5B0" valueType-type="int" valueType-sign="signed" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0000012D5D29AC70" file="main.c" linenr="55" column="17" str="int" scope="0000012D5C835520" type="name"/>
+    <token id="0000012D5D29A0D0" file="main.c" linenr="55" column="20" str="*" scope="0000012D5C835520" type="op" isArithmeticalOp="true"/>
+    <token id="0000012D5D29B2D0" file="main.c" linenr="55" column="21" str=")" scope="0000012D5C835520" link="0000012D5CF5C480"/>
+    <token id="0000012D5D29A5B0" file="main.c" linenr="55" column="22" str="1u" scope="0000012D5C835520" type="number" isInt="true" values="0000012D5C88C9B0" astParent="0000012D5CF5C480" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5D29B510" file="main.c" linenr="55" column="24" str="&lt;&lt;" scope="0000012D5C835520" type="op" isArithmeticalOp="true" values="0000012D5C88CBB0" astParent="0000012D5CF5C1E0" astOperand1="0000012D5CF5C480" astOperand2="0000012D5D29A370" valueType-type="int" valueType-sign="signed" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0000012D5D29A370" file="main.c" linenr="55" column="26" str="13" scope="0000012D5C835520" type="number" isInt="true" values="0000012D5C88CB10" astParent="0000012D5D29B510" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000012D5D29B3F0" file="main.c" linenr="55" column="28" str=";" scope="0000012D5C835520"/>
+    <token id="0000012D5D29B450" file="main.c" linenr="56" column="2" str="(" scope="0000012D5C835520" isExpandedMacro="true" link="0000012D5D29B570"/>
+    <token id="0000012D5D29A250" file="main.c" linenr="56" column="2" str="(" scope="0000012D5C835520" isExpandedMacro="true" link="0000012D5D29A3D0" values="0000012D5C88CBF0" astParent="0000012D5D29B7B0" astOperand1="0000012D5D29AAF0" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000012D5C834750"/>
+    <token id="0000012D5D29B330" file="main.c" linenr="56" column="2" str="EXTI_type" scope="0000012D5C835520" type="name" isExpandedMacro="true" type-scope="0000012D5C834750"/>
+    <token id="0000012D5D29B390" file="main.c" linenr="56" column="2" str="*" scope="0000012D5C835520" type="op" isArithmeticalOp="true" isExpandedMacro="true"/>
+    <token id="0000012D5D29A3D0" file="main.c" linenr="56" column="2" str=")" scope="0000012D5C835520" isExpandedMacro="true" link="0000012D5D29A250"/>
+    <token id="0000012D5D29AAF0" file="main.c" linenr="56" column="2" str="0x40010400" scope="0000012D5C835520" type="number" isInt="true" isExpandedMacro="true" values="0000012D5C88C9D0" astParent="0000012D5D29A250" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000012D5D29B570" file="main.c" linenr="56" column="2" str=")" scope="0000012D5C835520" isExpandedMacro="true" link="0000012D5D29B450"/>
+    <token id="0000012D5D29B7B0" file="main.c" linenr="56" column="6" str="." scope="0000012D5C835520" astParent="0000012D5D29A2B0" astOperand1="0000012D5D29A250" astOperand2="0000012D5D29A130" originalName="->" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5D29A130" file="main.c" linenr="56" column="8" str="PR" scope="0000012D5C835520" type="name" astParent="0000012D5D29B7B0"/>
+    <token id="0000012D5D29A2B0" file="main.c" linenr="56" column="11" str="|=" scope="0000012D5C835520" type="op" isAssignmentOp="true" astOperand1="0000012D5D29B7B0" astOperand2="0000012D5D29A4F0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5D29AE50" file="main.c" linenr="56" column="14" str="1u" scope="0000012D5C835520" type="number" isInt="true" values="0000012D5C88CA50" astParent="0000012D5D29A4F0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5D29A4F0" file="main.c" linenr="56" column="16" str="&lt;&lt;" scope="0000012D5C835520" type="op" isArithmeticalOp="true" values="0000012D5C88C850" astParent="0000012D5D29A2B0" astOperand1="0000012D5D29AE50" astOperand2="0000012D5D29B5D0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5D29B5D0" file="main.c" linenr="56" column="18" str="0" scope="0000012D5C835520" type="number" isInt="true" values="0000012D5C88C510" astParent="0000012D5D29A4F0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000012D5D29A310" file="main.c" linenr="56" column="19" str=";" scope="0000012D5C835520"/>
+    <token id="0000012D5D29A430" file="main.c" linenr="57" column="1" str="}" scope="0000012D5C835520" link="0000012D5CF5C6C0"/>
+  </tokenlist>
+  <scopes>
+    <scope id="0000012D5C834DB0" type="Global">
+      <functionList>
+        <function id="0000012D5CC389A0" tokenDef="0000012D5CD70D40" name="CLOCK_INIT" type="Function"/>
+        <function id="0000012D5CC38B80" tokenDef="0000012D5CD70F20" name="GPIO_INIT" type="Function"/>
+        <function id="0000012D5CC38860" tokenDef="0000012D5CD71100" name="AFIO_INIT" type="Function"/>
+        <function id="0000012D5CC38E00" tokenDef="0000012D5CF98300" name="EXTI_INIT" type="Function"/>
+        <function id="0000012D5CC38C20" tokenDef="0000012D5CF92080" name="NVIC_INIT" type="Function"/>
+        <function id="0000012D5D2DFA10" tokenDef="0000012D5CF5B9A0" name="setup" type="Function"/>
+        <function id="0000012D5D2DFB50" tokenDef="0000012D5CF5AF20" name="main" type="Function"/>
+        <function id="0000012D5D2DEC50" tokenDef="0000012D5CF5C600" name="EXTI0_IRQHandler" type="Function"/>
+      </functionList>
+    </scope>
+    <scope id="0000012D5C834FD0" type="Struct" className="AFIO_type" bodyStart="0000012D5CF91840" bodyEnd="0000012D5CF92620" nestedIn="0000012D5C834DB0">
+      <varlist>
+        <var id="0000012D5CF14D60"/>
+        <var id="0000012D5CF13A20"/>
+        <var id="0000012D5CF14660"/>
+        <var id="0000012D5CF13C50"/>
+        <var id="0000012D5CF13860"/>
+        <var id="0000012D5CF13CC0"/>
+        <var id="0000012D5CF14120"/>
+      </varlist>
+    </scope>
+    <scope id="0000012D5C834750" type="Struct" className="EXTI_type" bodyStart="0000012D5CF91E40" bodyEnd="0000012D5CD69BC0" nestedIn="0000012D5C834DB0">
+      <varlist>
+        <var id="0000012D5CF135C0"/>
+        <var id="0000012D5CF14740"/>
+        <var id="0000012D5CF14350"/>
+        <var id="0000012D5CF14190"/>
+        <var id="0000012D5CF15000"/>
+        <var id="0000012D5CF13B70"/>
+      </varlist>
+    </scope>
+    <scope id="0000012D5C834CA0" type="Struct" className="GPIO_type" bodyStart="0000012D5CD69500" bodyEnd="0000012D5CF59510" nestedIn="0000012D5C834DB0">
+      <varlist>
+        <var id="0000012D5CF139B0"/>
+        <var id="0000012D5CF13B00"/>
+        <var id="0000012D5CF13D30"/>
+        <var id="0000012D5CF13E80"/>
+        <var id="0000012D5CF168F0"/>
+        <var id="0000012D5CF154D0"/>
+        <var id="0000012D5CF16AB0"/>
+      </varlist>
+    </scope>
+    <scope id="0000012D5C834860" type="Struct" className="RCC_type" bodyStart="0000012D5CF58910" bodyEnd="0000012D5CF5AB60" nestedIn="0000012D5C834DB0">
+      <varlist>
+        <var id="0000012D5CF15A80"/>
+        <var id="0000012D5CF16030"/>
+        <var id="0000012D5CF15850"/>
+        <var id="0000012D5CF16880"/>
+        <var id="0000012D5CF151C0"/>
+        <var id="0000012D5CF16B20"/>
+        <var id="0000012D5CF166C0"/>
+        <var id="0000012D5CF162D0"/>
+        <var id="0000012D5CF15E70"/>
+        <var id="0000012D5CF167A0"/>
+      </varlist>
+    </scope>
+    <scope id="0000012D5C8351F0" type="Function" className="setup" bodyStart="0000012D5CF5B1C0" bodyEnd="0000012D5CF5AC20" nestedIn="0000012D5C834DB0" function="0000012D5D2DFA10"/>
+    <scope id="0000012D5C8350E0" type="Function" className="main" bodyStart="0000012D5CF5BAC0" bodyEnd="0000012D5CF5C360" nestedIn="0000012D5C834DB0" function="0000012D5D2DFB50"/>
+    <scope id="0000012D5C834A80" type="While" bodyStart="0000012D5CF5C4E0" bodyEnd="0000012D5CF5C2A0" nestedIn="0000012D5C8350E0"/>
+    <scope id="0000012D5C835520" type="Function" className="EXTI0_IRQHandler" bodyStart="0000012D5CF5C6C0" bodyEnd="0000012D5D29A430" nestedIn="0000012D5C834DB0" function="0000012D5D2DEC50"/>
+  </scopes>
+  <variables>
+    <var id="0000012D5CF135C0" nameToken="0000012D5CD693E0" typeStartToken="0000012D5CD69140" typeEndToken="0000012D5CD69140" access="Public" scope="0000012D5C834750" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF13860" nameToken="0000012D5CF91F00" typeStartToken="0000012D5CF92200" typeEndToken="0000012D5CF92200" access="Public" scope="0000012D5C834FD0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF139B0" nameToken="0000012D5CD694A0" typeStartToken="0000012D5CD69440" typeEndToken="0000012D5CD69440" access="Public" scope="0000012D5C834CA0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF13A20" nameToken="0000012D5CF91CC0" typeStartToken="0000012D5CF92500" typeEndToken="0000012D5CF92500" access="Public" scope="0000012D5C834FD0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF13B00" nameToken="0000012D5CD69560" typeStartToken="0000012D5CD690E0" typeEndToken="0000012D5CD690E0" access="Public" scope="0000012D5C834CA0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF13B70" nameToken="0000012D5CD698C0" typeStartToken="0000012D5CD692C0" typeEndToken="0000012D5CD692C0" access="Public" scope="0000012D5C834750" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF13C50" nameToken="0000012D5CF92380" typeStartToken="0000012D5CF92140" typeEndToken="0000012D5CF92140" access="Public" scope="0000012D5C834FD0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF13CC0" nameToken="0000012D5CF925C0" typeStartToken="0000012D5CF91780" typeEndToken="0000012D5CF91780" access="Public" scope="0000012D5C834FD0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF13D30" nameToken="0000012D5CD69E60" typeStartToken="0000012D5CD69680" typeEndToken="0000012D5CD69680" access="Public" scope="0000012D5C834CA0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF13E80" nameToken="0000012D5CF58A90" typeStartToken="0000012D5CF58B50" typeEndToken="0000012D5CF58B50" access="Public" scope="0000012D5C834CA0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF14120" nameToken="0000012D5CF922C0" typeStartToken="0000012D5CF919C0" typeEndToken="0000012D5CF919C0" access="Public" scope="0000012D5C834FD0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF14190" nameToken="0000012D5CD699E0" typeStartToken="0000012D5CD69860" typeEndToken="0000012D5CD69860" access="Public" scope="0000012D5C834750" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF14350" nameToken="0000012D5CD696E0" typeStartToken="0000012D5CD69D40" typeEndToken="0000012D5CD69D40" access="Public" scope="0000012D5C834750" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF14660" nameToken="0000012D5CF91FC0" typeStartToken="0000012D5CF920E0" typeEndToken="0000012D5CF920E0" access="Public" scope="0000012D5C834FD0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF14740" nameToken="0000012D5CD697A0" typeStartToken="0000012D5CD69C80" typeEndToken="0000012D5CD69C80" access="Public" scope="0000012D5C834750" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF14D60" nameToken="0000012D5CF92440" typeStartToken="0000012D5CF91A20" typeEndToken="0000012D5CF91A20" access="Public" scope="0000012D5C834FD0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF15000" nameToken="0000012D5CD69F80" typeStartToken="0000012D5CD69380" typeEndToken="0000012D5CD69380" access="Public" scope="0000012D5C834750" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF151C0" nameToken="0000012D5CF5ADA0" typeStartToken="0000012D5CF58A30" typeEndToken="0000012D5CF58A30" access="Public" scope="0000012D5C834860" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF154D0" nameToken="0000012D5CF58AF0" typeStartToken="0000012D5CF58C10" typeEndToken="0000012D5CF58C10" access="Public" scope="0000012D5C834CA0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF15850" nameToken="0000012D5CF594B0" typeStartToken="0000012D5CF596F0" typeEndToken="0000012D5CF596F0" access="Public" scope="0000012D5C834860" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF15A80" nameToken="0000012D5CF58FD0" typeStartToken="0000012D5CF59570" typeEndToken="0000012D5CF59570" access="Public" scope="0000012D5C834860" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF15E70" nameToken="0000012D5CF5B820" typeStartToken="0000012D5CF5B460" typeEndToken="0000012D5CF5B460" access="Public" scope="0000012D5C834860" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF16030" nameToken="0000012D5CF58E50" typeStartToken="0000012D5CF58D90" typeEndToken="0000012D5CF58D90" access="Public" scope="0000012D5C834860" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF162D0" nameToken="0000012D5CF5C0C0" typeStartToken="0000012D5CF5B4C0" typeEndToken="0000012D5CF5B4C0" access="Public" scope="0000012D5C834860" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF166C0" nameToken="0000012D5CF5BCA0" typeStartToken="0000012D5CF5B0A0" typeEndToken="0000012D5CF5B0A0" access="Public" scope="0000012D5C834860" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF167A0" nameToken="0000012D5CF5ACE0" typeStartToken="0000012D5CF5B340" typeEndToken="0000012D5CF5B340" access="Public" scope="0000012D5C834860" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF16880" nameToken="0000012D5CF59630" typeStartToken="0000012D5CF595D0" typeEndToken="0000012D5CF595D0" access="Public" scope="0000012D5C834860" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF168F0" nameToken="0000012D5CF597B0" typeStartToken="0000012D5CF59750" typeEndToken="0000012D5CF59750" access="Public" scope="0000012D5C834CA0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF16AB0" nameToken="0000012D5CF59090" typeStartToken="0000012D5CF59450" typeEndToken="0000012D5CF59450" access="Public" scope="0000012D5C834CA0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF16B20" nameToken="0000012D5CF5AFE0" typeStartToken="0000012D5CF5AF80" typeEndToken="0000012D5CF5AF80" access="Public" scope="0000012D5C834860" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+  </variables>
+  <valueflow>
+    <values id="0000012D5C88C590">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0000012D5C88C910">
+      <value intvalue="1073809408" known="true"/>
+    </values>
+    <values id="0000012D5C88CB90">
+      <value intvalue="1073809408" known="true"/>
+    </values>
+    <values id="0000012D5C88CAB0">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0000012D5C88C9B0">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0000012D5C88CBB0">
+      <value intvalue="8192" known="true"/>
+    </values>
+    <values id="0000012D5C88CB10">
+      <value intvalue="13" known="true"/>
+    </values>
+    <values id="0000012D5C88CBF0">
+      <value intvalue="1073808384" known="true"/>
+    </values>
+    <values id="0000012D5C88C9D0">
+      <value intvalue="1073808384" known="true"/>
+    </values>
+    <values id="0000012D5C88CA50">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0000012D5C88C850">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0000012D5C88C510">
+      <value intvalue="0" known="true"/>
+    </values>
+  </valueflow>
+</dump>
+<dump cfg="__ARM_FP;__SOFT_FP__">
+  <standards>
+    <c version="c11"/>
+    <cpp version="c++20"/>
+  </standards>
+  <directivelist>
+    <directive file="main.c" linenr="24" str="#if !defined(__SOFT_FP__) &amp;&amp; defined(__ARM_FP)"/>
+    <directive file="main.c" linenr="25" str="#warning &quot;FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use.&quot;"/>
+    <directive file="main.c" linenr="26" str="#endif"/>
+    <directive file="main.c" linenr="28" str="#include &quot;init.h&quot;"/>
+    <directive file="main.c" linenr="29" str="#include &quot;memory_map.h&quot;"/>
+    <directive file="init.h" linenr="8" str="#ifndef INIT_H_"/>
+    <directive file="init.h" linenr="9" str="#define INIT_H_"/>
+    <directive file="init.h" linenr="46" str="#endif"/>
+    <directive file="memory_map.h" linenr="9" str="#ifndef MEMORY_MAP_H_"/>
+    <directive file="memory_map.h" linenr="10" str="#define MEMORY_MAP_H_"/>
+    <directive file="memory_map.h" linenr="12" str="#include &quot;stdint.h&quot;"/>
+    <directive file="memory_map.h" linenr="14" str="#define AFIO_BASE 0x40010000"/>
+    <directive file="memory_map.h" linenr="15" str="#define EXTI_BASE 0x40010400"/>
+    <directive file="memory_map.h" linenr="16" str="#define GPIOA_BASE 0x40010800"/>
+    <directive file="memory_map.h" linenr="17" str="#define RCC_BASE 0x40021000"/>
+    <directive file="memory_map.h" linenr="64" str="#define AFIO ((AFIO_type*)AFIO_BASE)"/>
+    <directive file="memory_map.h" linenr="65" str="#define EXTI ((EXTI_type*)EXTI_BASE)"/>
+    <directive file="memory_map.h" linenr="66" str="#define GPIOA ((GPIO_type*)GPIOA_BASE)"/>
+    <directive file="memory_map.h" linenr="67" str="#define RCC ((RCC_type*)RCC_BASE)"/>
+    <directive file="memory_map.h" linenr="68" str="#endif"/>
+  </directivelist>
+  <tokenlist>
+    <token id="0000012D5CD70EC0" file="init.h" linenr="16" column="1" str="extern" scope="0000012D5C834970" type="name"/>
+    <token id="0000012D5CD71040" file="init.h" linenr="16" column="8" str="void" scope="0000012D5C834970" type="name"/>
+    <token id="0000012D5CD70DA0" file="init.h" linenr="16" column="13" str="CLOCK_INIT" scope="0000012D5C834970" type="name" function="0000012D5CC38540"/>
+    <token id="0000012D5CD70F20" file="init.h" linenr="16" column="23" str="(" scope="0000012D5C834970" link="0000012D5CD71340" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CD71340" file="init.h" linenr="16" column="24" str=")" scope="0000012D5C834970" link="0000012D5CD70F20"/>
+    <token id="0000012D5CD70CE0" file="init.h" linenr="16" column="25" str=";" scope="0000012D5C834970"/>
+    <token id="0000012D5CD70D40" file="init.h" linenr="23" column="1" str="extern" scope="0000012D5C834970" type="name"/>
+    <token id="0000012D5CD70F80" file="init.h" linenr="23" column="8" str="void" scope="0000012D5C834970" type="name"/>
+    <token id="0000012D5CD710A0" file="init.h" linenr="23" column="13" str="GPIO_INIT" scope="0000012D5C834970" type="name" function="0000012D5CC387C0"/>
+    <token id="0000012D5CD70FE0" file="init.h" linenr="23" column="22" str="(" scope="0000012D5C834970" link="0000012D5CD70C20" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CD70C20" file="init.h" linenr="23" column="23" str=")" scope="0000012D5C834970" link="0000012D5CD70FE0"/>
+    <token id="0000012D5CD70C80" file="init.h" linenr="23" column="24" str=";" scope="0000012D5C834970"/>
+    <token id="0000012D5CD71100" file="init.h" linenr="30" column="1" str="extern" scope="0000012D5C834970" type="name"/>
+    <token id="0000012D5CD71280" file="init.h" linenr="30" column="8" str="void" scope="0000012D5C834970" type="name"/>
+    <token id="0000012D5CD71160" file="init.h" linenr="30" column="13" str="AFIO_INIT" scope="0000012D5C834970" type="name" function="0000012D5CC38860"/>
+    <token id="0000012D5CD712E0" file="init.h" linenr="30" column="22" str="(" scope="0000012D5C834970" link="0000012D5CD711C0" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CD711C0" file="init.h" linenr="30" column="23" str=")" scope="0000012D5C834970" link="0000012D5CD712E0"/>
+    <token id="0000012D5CF97FA0" file="init.h" linenr="30" column="24" str=";" scope="0000012D5C834970"/>
+    <token id="0000012D5CF98840" file="init.h" linenr="37" column="1" str="extern" scope="0000012D5C834970" type="name"/>
+    <token id="0000012D5CF98060" file="init.h" linenr="37" column="8" str="void" scope="0000012D5C834970" type="name"/>
+    <token id="0000012D5CF980C0" file="init.h" linenr="37" column="13" str="EXTI_INIT" scope="0000012D5C834970" type="name" function="0000012D5CC38900"/>
+    <token id="0000012D5CF98300" file="init.h" linenr="37" column="22" str="(" scope="0000012D5C834970" link="0000012D5CF98360" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CF98360" file="init.h" linenr="37" column="23" str=")" scope="0000012D5C834970" link="0000012D5CF98300"/>
+    <token id="0000012D5CF983C0" file="init.h" linenr="37" column="24" str=";" scope="0000012D5C834970"/>
+    <token id="0000012D5CF97940" file="init.h" linenr="44" column="1" str="extern" scope="0000012D5C834970" type="name"/>
+    <token id="0000012D5CF98480" file="init.h" linenr="44" column="8" str="void" scope="0000012D5C834970" type="name"/>
+    <token id="0000012D5CF58DF0" file="init.h" linenr="44" column="13" str="NVIC_INIT" scope="0000012D5C834970" type="name" function="0000012D5CC389A0"/>
+    <token id="0000012D5CF59750" file="init.h" linenr="44" column="22" str="(" scope="0000012D5C834970" link="0000012D5CF58910" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CF58910" file="init.h" linenr="44" column="23" str=")" scope="0000012D5C834970" link="0000012D5CF59750"/>
+    <token id="0000012D5CF589D0" file="init.h" linenr="44" column="24" str=";" scope="0000012D5C834970"/>
+    <token id="0000012D5CF59090" file="memory_map.h" linenr="20" column="9" str="struct" scope="0000012D5C834970" type="name"/>
+    <token id="0000012D5D3236E0" file="memory_map.h" linenr="20" column="0" str="AFIO_type" scope="0000012D5C834970" type="name" type-scope="0000012D5C834FD0"/>
+    <token id="0000012D5CF59030" file="memory_map.h" linenr="20" column="15" str="{" scope="0000012D5C834FD0" link="0000012D5CF592D0"/>
+    <token id="0000012D5CF597B0" file="memory_map.h" linenr="21" column="2" str="volatile" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF596F0" file="memory_map.h" linenr="21" column="11" str="uint32_t" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF59150" file="memory_map.h" linenr="21" column="20" str="EVCR" scope="0000012D5C834FD0" type="name" varId="1" variable="0000012D5CF14DD0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF58A30" file="memory_map.h" linenr="21" column="24" str=";" scope="0000012D5C834FD0"/>
+    <token id="0000012D5CF58E50" file="memory_map.h" linenr="22" column="2" str="volatile" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF59690" file="memory_map.h" linenr="22" column="11" str="uint32_t" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF58EB0" file="memory_map.h" linenr="22" column="20" str="MAPR" scope="0000012D5C834FD0" type="name" varId="2" variable="0000012D5CF13D30" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF59330" file="memory_map.h" linenr="22" column="24" str=";" scope="0000012D5C834FD0"/>
+    <token id="0000012D5CF594B0" file="memory_map.h" linenr="23" column="2" str="volatile" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF59210" file="memory_map.h" linenr="23" column="11" str="uint32_t" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF59810" file="memory_map.h" linenr="23" column="20" str="EXTICR1" scope="0000012D5C834FD0" type="name" varId="3" variable="0000012D5CF13C50" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF58A90" file="memory_map.h" linenr="23" column="27" str=";" scope="0000012D5C834FD0"/>
+    <token id="0000012D5CF58C70" file="memory_map.h" linenr="24" column="2" str="volatile" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF58D90" file="memory_map.h" linenr="24" column="11" str="uint32_t" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF58AF0" file="memory_map.h" linenr="24" column="20" str="EXTICR2" scope="0000012D5C834FD0" type="name" varId="4" variable="0000012D5CF146D0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF58FD0" file="memory_map.h" linenr="24" column="27" str=";" scope="0000012D5C834FD0"/>
+    <token id="0000012D5CF59270" file="memory_map.h" linenr="25" column="2" str="volatile" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF58B50" file="memory_map.h" linenr="25" column="11" str="uint32_t" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF58BB0" file="memory_map.h" linenr="25" column="20" str="EXTICR3" scope="0000012D5C834FD0" type="name" varId="5" variable="0000012D5CF14740" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF595D0" file="memory_map.h" linenr="25" column="27" str=";" scope="0000012D5C834FD0"/>
+    <token id="0000012D5CF59390" file="memory_map.h" linenr="26" column="2" str="volatile" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF590F0" file="memory_map.h" linenr="26" column="11" str="uint32_t" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF58C10" file="memory_map.h" linenr="26" column="20" str="EXTICR4" scope="0000012D5C834FD0" type="name" varId="6" variable="0000012D5CF13FD0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF58CD0" file="memory_map.h" linenr="26" column="27" str=";" scope="0000012D5C834FD0"/>
+    <token id="0000012D5CF591B0" file="memory_map.h" linenr="27" column="2" str="volatile" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF58D30" file="memory_map.h" linenr="27" column="11" str="uint32_t" scope="0000012D5C834FD0" type="name"/>
+    <token id="0000012D5CF58F10" file="memory_map.h" linenr="27" column="20" str="MAPR2" scope="0000012D5C834FD0" type="name" varId="7" variable="0000012D5CF135C0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF58F70" file="memory_map.h" linenr="27" column="25" str=";" scope="0000012D5C834FD0"/>
+    <token id="0000012D5CF592D0" file="memory_map.h" linenr="28" column="1" str="}" scope="0000012D5C834FD0" link="0000012D5CF59030"/>
+    <token id="0000012D5D3229C0" file="memory_map.h" linenr="28" column="0" str=";" scope="0000012D5C834970"/>
+    <token id="0000012D5CF59510" file="memory_map.h" linenr="30" column="9" str="struct" scope="0000012D5C834970" type="name"/>
+    <token id="0000012D5D322060" file="memory_map.h" linenr="30" column="0" str="EXTI_type" scope="0000012D5C834970" type="name" type-scope="0000012D5C834DB0"/>
+    <token id="0000012D5CF59630" file="memory_map.h" linenr="30" column="15" str="{" scope="0000012D5C834DB0" link="0000012D5CF91720"/>
+    <token id="0000012D5CF923E0" file="memory_map.h" linenr="31" column="2" str="volatile" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CF91D80" file="memory_map.h" linenr="31" column="11" str="uint32_t" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CF92440" file="memory_map.h" linenr="31" column="20" str="IMR" scope="0000012D5C834DB0" type="name" varId="8" variable="0000012D5CF13CC0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF91DE0" file="memory_map.h" linenr="31" column="23" str=";" scope="0000012D5C834DB0"/>
+    <token id="0000012D5CF920E0" file="memory_map.h" linenr="32" column="2" str="volatile" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CF91A80" file="memory_map.h" linenr="32" column="11" str="uint32_t" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CF91C00" file="memory_map.h" linenr="32" column="20" str="EMR" scope="0000012D5C834DB0" type="name" varId="9" variable="0000012D5CF13630" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF91BA0" file="memory_map.h" linenr="32" column="23" str=";" scope="0000012D5C834DB0"/>
+    <token id="0000012D5CF922C0" file="memory_map.h" linenr="33" column="2" str="volatile" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CF91960" file="memory_map.h" linenr="33" column="11" str="uint32_t" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CF91B40" file="memory_map.h" linenr="33" column="20" str="RSTR" scope="0000012D5C834DB0" type="name" varId="10" variable="0000012D5CF14040" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF91E40" file="memory_map.h" linenr="33" column="24" str=";" scope="0000012D5C834DB0"/>
+    <token id="0000012D5CF92320" file="memory_map.h" linenr="34" column="2" str="volatile" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CF924A0" file="memory_map.h" linenr="34" column="11" str="uint32_t" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CF92500" file="memory_map.h" linenr="34" column="20" str="FSTR" scope="0000012D5C834DB0" type="name" varId="11" variable="0000012D5CF149E0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF91EA0" file="memory_map.h" linenr="34" column="24" str=";" scope="0000012D5C834DB0"/>
+    <token id="0000012D5CF91C60" file="memory_map.h" linenr="35" column="2" str="volatile" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CF91D20" file="memory_map.h" linenr="35" column="11" str="uint32_t" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CF91F00" file="memory_map.h" linenr="35" column="20" str="SWIER" scope="0000012D5C834DB0" type="name" varId="12" variable="0000012D5CF13860" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF91F60" file="memory_map.h" linenr="35" column="25" str=";" scope="0000012D5C834DB0"/>
+    <token id="0000012D5CF92620" file="memory_map.h" linenr="36" column="2" str="volatile" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CF91900" file="memory_map.h" linenr="36" column="11" str="uint32_t" scope="0000012D5C834DB0" type="name"/>
+    <token id="0000012D5CF921A0" file="memory_map.h" linenr="36" column="20" str="PR" scope="0000012D5C834DB0" type="name" varId="13" variable="0000012D5CF14970" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF92560" file="memory_map.h" linenr="36" column="22" str=";" scope="0000012D5C834DB0"/>
+    <token id="0000012D5CF91720" file="memory_map.h" linenr="37" column="1" str="}" scope="0000012D5C834DB0" link="0000012D5CF59630"/>
+    <token id="0000012D5D322180" file="memory_map.h" linenr="37" column="0" str=";" scope="0000012D5C834970"/>
+    <token id="0000012D5CF91FC0" file="memory_map.h" linenr="40" column="9" str="struct" scope="0000012D5C834970" type="name"/>
+    <token id="0000012D5D322420" file="memory_map.h" linenr="40" column="0" str="GPIO_type" scope="0000012D5C834970" type="name" type-scope="0000012D5C834A80"/>
+    <token id="0000012D5CF91780" file="memory_map.h" linenr="40" column="15" str="{" scope="0000012D5C834A80" link="0000012D5CD69BC0"/>
+    <token id="0000012D5CF917E0" file="memory_map.h" linenr="41" column="2" str="volatile" scope="0000012D5C834A80" type="name"/>
+    <token id="0000012D5CF91840" file="memory_map.h" linenr="41" column="11" str="uint32_t" scope="0000012D5C834A80" type="name"/>
+    <token id="0000012D5CF918A0" file="memory_map.h" linenr="41" column="20" str="CRL" scope="0000012D5C834A80" type="name" varId="14" variable="0000012D5CF13780" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF92080" file="memory_map.h" linenr="41" column="23" str=";" scope="0000012D5C834A80"/>
+    <token id="0000012D5CF919C0" file="memory_map.h" linenr="42" column="2" str="volatile" scope="0000012D5C834A80" type="name"/>
+    <token id="0000012D5CF91A20" file="memory_map.h" linenr="42" column="11" str="uint32_t" scope="0000012D5C834A80" type="name"/>
+    <token id="0000012D5CF91CC0" file="memory_map.h" linenr="42" column="20" str="CRH" scope="0000012D5C834A80" type="name" varId="15" variable="0000012D5CF139B0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF92140" file="memory_map.h" linenr="42" column="23" str=";" scope="0000012D5C834A80"/>
+    <token id="0000012D5CF92200" file="memory_map.h" linenr="43" column="2" str="volatile" scope="0000012D5C834A80" type="name"/>
+    <token id="0000012D5CF91AE0" file="memory_map.h" linenr="43" column="11" str="uint32_t" scope="0000012D5C834A80" type="name"/>
+    <token id="0000012D5CF92260" file="memory_map.h" linenr="43" column="20" str="IDR" scope="0000012D5C834A80" type="name" varId="16" variable="0000012D5CF13DA0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CD69560" file="memory_map.h" linenr="43" column="23" str=";" scope="0000012D5C834A80"/>
+    <token id="0000012D5CD69080" file="memory_map.h" linenr="44" column="2" str="volatile" scope="0000012D5C834A80" type="name"/>
+    <token id="0000012D5CD690E0" file="memory_map.h" linenr="44" column="11" str="uint32_t" scope="0000012D5C834A80" type="name"/>
+    <token id="0000012D5CD69A40" file="memory_map.h" linenr="44" column="20" str="ODR" scope="0000012D5C834A80" type="name" varId="17" variable="0000012D5CF14190" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CD69AA0" file="memory_map.h" linenr="44" column="23" str=";" scope="0000012D5C834A80"/>
+    <token id="0000012D5CD69740" file="memory_map.h" linenr="45" column="2" str="volatile" scope="0000012D5C834A80" type="name"/>
+    <token id="0000012D5CD69860" file="memory_map.h" linenr="45" column="11" str="uint32_t" scope="0000012D5C834A80" type="name"/>
+    <token id="0000012D5CD69500" file="memory_map.h" linenr="45" column="20" str="BSRR" scope="0000012D5C834A80" type="name" varId="18" variable="0000012D5CF16420" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CD699E0" file="memory_map.h" linenr="45" column="24" str=";" scope="0000012D5C834A80"/>
+    <token id="0000012D5CD694A0" file="memory_map.h" linenr="46" column="2" str="volatile" scope="0000012D5C834A80" type="name"/>
+    <token id="0000012D5CD69680" file="memory_map.h" linenr="46" column="11" str="uint32_t" scope="0000012D5C834A80" type="name"/>
+    <token id="0000012D5CD69140" file="memory_map.h" linenr="46" column="20" str="BRR" scope="0000012D5C834A80" type="name" varId="19" variable="0000012D5CF15D90" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CD69380" file="memory_map.h" linenr="46" column="23" str=";" scope="0000012D5C834A80"/>
+    <token id="0000012D5CD693E0" file="memory_map.h" linenr="47" column="2" str="volatile" scope="0000012D5C834A80" type="name"/>
+    <token id="0000012D5CD69E00" file="memory_map.h" linenr="47" column="11" str="uint32_t" scope="0000012D5C834A80" type="name"/>
+    <token id="0000012D5CD69440" file="memory_map.h" linenr="47" column="20" str="LCKR" scope="0000012D5C834A80" type="name" varId="20" variable="0000012D5CF15700" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CD69C20" file="memory_map.h" linenr="47" column="24" str=";" scope="0000012D5C834A80"/>
+    <token id="0000012D5CD69BC0" file="memory_map.h" linenr="48" column="1" str="}" scope="0000012D5C834A80" link="0000012D5CF91780"/>
+    <token id="0000012D5D322D20" file="memory_map.h" linenr="48" column="0" str=";" scope="0000012D5C834970"/>
+    <token id="0000012D5CD692C0" file="memory_map.h" linenr="50" column="9" str="struct" scope="0000012D5C834970" type="name"/>
+    <token id="0000012D5D3234A0" file="memory_map.h" linenr="50" column="0" str="RCC_type" scope="0000012D5C834970" type="name" type-scope="0000012D5C8351F0"/>
+    <token id="0000012D5CD69CE0" file="memory_map.h" linenr="50" column="15" str="{" scope="0000012D5C8351F0" link="0000012D5CF5AE20"/>
+    <token id="0000012D5CD696E0" file="memory_map.h" linenr="51" column="2" str="volatile" scope="0000012D5C8351F0" type="name"/>
+    <token id="0000012D5CD691A0" file="memory_map.h" linenr="51" column="11" str="uint32_t" scope="0000012D5C8351F0" type="name"/>
+    <token id="0000012D5CD695C0" file="memory_map.h" linenr="51" column="20" str="CR" scope="0000012D5C8351F0" type="name" varId="21" variable="0000012D5CF15930" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CD69B00" file="memory_map.h" linenr="51" column="22" str=";" scope="0000012D5C8351F0"/>
+    <token id="0000012D5CD69B60" file="memory_map.h" linenr="52" column="2" str="volatile" scope="0000012D5C8351F0" type="name"/>
+    <token id="0000012D5CD69800" file="memory_map.h" linenr="52" column="11" str="uint32_t" scope="0000012D5C8351F0" type="name"/>
+    <token id="0000012D5CD69D40" file="memory_map.h" linenr="52" column="20" str="CFGR" scope="0000012D5C8351F0" type="name" varId="22" variable="0000012D5CF15B60" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CD69620" file="memory_map.h" linenr="52" column="24" str=";" scope="0000012D5C8351F0"/>
+    <token id="0000012D5CD69260" file="memory_map.h" linenr="53" column="2" str="volatile" scope="0000012D5C8351F0" type="name"/>
+    <token id="0000012D5CD69E60" file="memory_map.h" linenr="53" column="11" str="uint32_t" scope="0000012D5C8351F0" type="name"/>
+    <token id="0000012D5CD69DA0" file="memory_map.h" linenr="53" column="20" str="CIR" scope="0000012D5C8351F0" type="name" varId="23" variable="0000012D5CF15770" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CD69EC0" file="memory_map.h" linenr="53" column="23" str=";" scope="0000012D5C8351F0"/>
+    <token id="0000012D5CD697A0" file="memory_map.h" linenr="54" column="2" str="volatile" scope="0000012D5C8351F0" type="name"/>
+    <token id="0000012D5CD698C0" file="memory_map.h" linenr="54" column="11" str="uint32_t" scope="0000012D5C8351F0" type="name"/>
+    <token id="0000012D5CD69980" file="memory_map.h" linenr="54" column="20" str="APB2BRSTR" scope="0000012D5C8351F0" type="name" varId="24" variable="0000012D5CF16AB0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CD69920" file="memory_map.h" linenr="54" column="29" str=";" scope="0000012D5C8351F0"/>
+    <token id="0000012D5CD69F20" file="memory_map.h" linenr="55" column="2" str="volatile" scope="0000012D5C8351F0" type="name"/>
+    <token id="0000012D5CD69F80" file="memory_map.h" linenr="55" column="11" str="uint32_t" scope="0000012D5C8351F0" type="name"/>
+    <token id="0000012D5CF59B00" file="memory_map.h" linenr="55" column="20" str="APB1BRSTR" scope="0000012D5C8351F0" type="name" varId="25" variable="0000012D5CF15E70" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF5A5E0" file="memory_map.h" linenr="55" column="29" str=";" scope="0000012D5C8351F0"/>
+    <token id="0000012D5CF59920" file="memory_map.h" linenr="56" column="2" str="volatile" scope="0000012D5C8351F0" type="name"/>
+    <token id="0000012D5CF5AD60" file="memory_map.h" linenr="56" column="11" str="uint32_t" scope="0000012D5C8351F0" type="name"/>
+    <token id="0000012D5CF5A4C0" file="memory_map.h" linenr="56" column="20" str="AHBENR" scope="0000012D5C8351F0" type="name" varId="26" variable="0000012D5CF150E0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF5B000" file="memory_map.h" linenr="56" column="26" str=";" scope="0000012D5C8351F0"/>
+    <token id="0000012D5CF5AFA0" file="memory_map.h" linenr="57" column="2" str="volatile" scope="0000012D5C8351F0" type="name"/>
+    <token id="0000012D5CF5AAC0" file="memory_map.h" linenr="57" column="11" str="uint32_t" scope="0000012D5C8351F0" type="name"/>
+    <token id="0000012D5CF5ABE0" file="memory_map.h" linenr="57" column="20" str="APB2ENR" scope="0000012D5C8351F0" type="name" varId="27" variable="0000012D5CF16030" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF5A400" file="memory_map.h" linenr="57" column="27" str=";" scope="0000012D5C8351F0"/>
+    <token id="0000012D5CF5AD00" file="memory_map.h" linenr="58" column="2" str="volatile" scope="0000012D5C8351F0" type="name"/>
+    <token id="0000012D5CF5A6A0" file="memory_map.h" linenr="58" column="11" str="uint32_t" scope="0000012D5C8351F0" type="name"/>
+    <token id="0000012D5CF59DA0" file="memory_map.h" linenr="58" column="20" str="APB1ENR" scope="0000012D5C8351F0" type="name" varId="28" variable="0000012D5CF15EE0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF59C20" file="memory_map.h" linenr="58" column="27" str=";" scope="0000012D5C8351F0"/>
+    <token id="0000012D5CF5A2E0" file="memory_map.h" linenr="59" column="2" str="volatile" scope="0000012D5C8351F0" type="name"/>
+    <token id="0000012D5CF5A580" file="memory_map.h" linenr="59" column="11" str="uint32_t" scope="0000012D5C8351F0" type="name"/>
+    <token id="0000012D5CF59E60" file="memory_map.h" linenr="59" column="20" str="BDCR" scope="0000012D5C8351F0" type="name" varId="29" variable="0000012D5CF159A0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF5A160" file="memory_map.h" linenr="59" column="24" str=";" scope="0000012D5C8351F0"/>
+    <token id="0000012D5CF5A0A0" file="memory_map.h" linenr="60" column="2" str="volatile" scope="0000012D5C8351F0" type="name"/>
+    <token id="0000012D5CF5AB20" file="memory_map.h" linenr="60" column="11" str="uint32_t" scope="0000012D5C8351F0" type="name"/>
+    <token id="0000012D5CF5A100" file="memory_map.h" linenr="60" column="20" str="CSR" scope="0000012D5C8351F0" type="name" varId="30" variable="0000012D5CF16810" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF5A1C0" file="memory_map.h" linenr="60" column="23" str=";" scope="0000012D5C8351F0"/>
+    <token id="0000012D5CF5AE20" file="memory_map.h" linenr="61" column="1" str="}" scope="0000012D5C8351F0" link="0000012D5CD69CE0"/>
+    <token id="0000012D5D323620" file="memory_map.h" linenr="61" column="0" str=";" scope="0000012D5C834970"/>
+    <token id="0000012D5CF59EC0" file="main.c" linenr="34" column="1" str="void" scope="0000012D5C834970" type="name"/>
+    <token id="0000012D5CF5ACA0" file="main.c" linenr="34" column="6" str="setup" scope="0000012D5C834970" type="name" function="0000012D5D106250"/>
+    <token id="0000012D5CF5ADC0" file="main.c" linenr="34" column="11" str="(" scope="0000012D5C834970" link="0000012D5CF59D40" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CF59D40" file="main.c" linenr="34" column="12" str=")" scope="0000012D5C834970" link="0000012D5CF5ADC0"/>
+    <token id="0000012D5CF5AE80" file="main.c" linenr="35" column="1" str="{" scope="0000012D5C834B90" link="0000012D5CF59CE0"/>
+    <token id="0000012D5CF59F20" file="main.c" linenr="36" column="2" str="CLOCK_INIT" scope="0000012D5C834B90" type="name" function="0000012D5CC38540" astParent="0000012D5CF59E00"/>
+    <token id="0000012D5CF59E00" file="main.c" linenr="36" column="12" str="(" scope="0000012D5C834B90" link="0000012D5CF59F80" astOperand1="0000012D5CF59F20" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CF59F80" file="main.c" linenr="36" column="13" str=")" scope="0000012D5C834B90" link="0000012D5CF59E00"/>
+    <token id="0000012D5CF5A220" file="main.c" linenr="36" column="14" str=";" scope="0000012D5C834B90"/>
+    <token id="0000012D5CF5B0C0" file="main.c" linenr="37" column="2" str="GPIO_INIT" scope="0000012D5C834B90" type="name" function="0000012D5CC387C0" astParent="0000012D5CF5AEE0"/>
+    <token id="0000012D5CF5AEE0" file="main.c" linenr="37" column="11" str="(" scope="0000012D5C834B90" link="0000012D5CF5B060" astOperand1="0000012D5CF5B0C0" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CF5B060" file="main.c" linenr="37" column="12" str=")" scope="0000012D5C834B90" link="0000012D5CF5AEE0"/>
+    <token id="0000012D5CF5AF40" file="main.c" linenr="37" column="13" str=";" scope="0000012D5C834B90"/>
+    <token id="0000012D5CF5A520" file="main.c" linenr="38" column="2" str="AFIO_INIT" scope="0000012D5C834B90" type="name" function="0000012D5CC38860" astParent="0000012D5CF5AB80"/>
+    <token id="0000012D5CF5AB80" file="main.c" linenr="38" column="11" str="(" scope="0000012D5C834B90" link="0000012D5CF5A280" astOperand1="0000012D5CF5A520" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CF5A280" file="main.c" linenr="38" column="12" str=")" scope="0000012D5C834B90" link="0000012D5CF5AB80"/>
+    <token id="0000012D5CF59980" file="main.c" linenr="38" column="13" str=";" scope="0000012D5C834B90"/>
+    <token id="0000012D5CF5A340" file="main.c" linenr="39" column="2" str="EXTI_INIT" scope="0000012D5C834B90" type="name" function="0000012D5CC38900" astParent="0000012D5CF599E0"/>
+    <token id="0000012D5CF599E0" file="main.c" linenr="39" column="11" str="(" scope="0000012D5C834B90" link="0000012D5CF5A3A0" astOperand1="0000012D5CF5A340" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CF5A3A0" file="main.c" linenr="39" column="12" str=")" scope="0000012D5C834B90" link="0000012D5CF599E0"/>
+    <token id="0000012D5CF5A880" file="main.c" linenr="39" column="13" str=";" scope="0000012D5C834B90"/>
+    <token id="0000012D5CF59FE0" file="main.c" linenr="40" column="2" str="NVIC_INIT" scope="0000012D5C834B90" type="name" function="0000012D5CC389A0" astParent="0000012D5CF5A640"/>
+    <token id="0000012D5CF5A640" file="main.c" linenr="40" column="11" str="(" scope="0000012D5C834B90" link="0000012D5CF5A040" astOperand1="0000012D5CF59FE0" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CF5A040" file="main.c" linenr="40" column="12" str=")" scope="0000012D5C834B90" link="0000012D5CF5A640"/>
+    <token id="0000012D5CF59A40" file="main.c" linenr="40" column="13" str=";" scope="0000012D5C834B90"/>
+    <token id="0000012D5CF59CE0" file="main.c" linenr="41" column="1" str="}" scope="0000012D5C834B90" link="0000012D5CF5AE80"/>
+    <token id="0000012D5CF5A700" file="main.c" linenr="43" column="1" str="int" scope="0000012D5C834970" type="name"/>
+    <token id="0000012D5CF5A760" file="main.c" linenr="43" column="5" str="main" scope="0000012D5C834970" type="name" function="0000012D5D1067F0"/>
+    <token id="0000012D5CF59AA0" file="main.c" linenr="43" column="9" str="(" scope="0000012D5C834970" link="0000012D5CF59BC0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000012D5CF59BC0" file="main.c" linenr="43" column="14" str=")" scope="0000012D5C834970" link="0000012D5CF59AA0"/>
+    <token id="0000012D5CF5A7C0" file="main.c" linenr="44" column="1" str="{" scope="0000012D5C834CA0" link="0000012D5CF5B780"/>
+    <token id="0000012D5CF5A820" file="main.c" linenr="46" column="2" str="setup" scope="0000012D5C834CA0" type="name" function="0000012D5D106250" astParent="0000012D5CF5A8E0"/>
+    <token id="0000012D5CF5A8E0" file="main.c" linenr="46" column="7" str="(" scope="0000012D5C834CA0" link="0000012D5CF5A940" astOperand1="0000012D5CF5A820" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CF5A940" file="main.c" linenr="46" column="8" str=")" scope="0000012D5C834CA0" link="0000012D5CF5A8E0"/>
+    <token id="0000012D5CF5A9A0" file="main.c" linenr="46" column="9" str=";" scope="0000012D5C834CA0"/>
+    <token id="0000012D5CF59C80" file="main.c" linenr="47" column="5" str="while" scope="0000012D5C834CA0" type="name" astParent="0000012D5CF5AA00"/>
+    <token id="0000012D5CF5AA00" file="main.c" linenr="47" column="10" str="(" scope="0000012D5C834CA0" link="0000012D5CF5B7E0" astOperand1="0000012D5CF59C80" astOperand2="0000012D5CF5AA60"/>
+    <token id="0000012D5CF5AA60" file="main.c" linenr="47" column="11" str="1" scope="0000012D5C834CA0" type="number" isInt="true" values="0000012D5C88C770" astParent="0000012D5CF5AA00" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000012D5CF5B7E0" file="main.c" linenr="47" column="12" str=")" scope="0000012D5C834CA0" link="0000012D5CF5AA00"/>
+    <token id="0000012D5CF5B840" file="main.c" linenr="48" column="5" str="{" scope="0000012D5C834EC0" link="0000012D5CF5B660"/>
+    <token id="0000012D5CF5B660" file="main.c" linenr="50" column="5" str="}" scope="0000012D5C834EC0" link="0000012D5CF5B840"/>
+    <token id="0000012D5CF5B780" file="main.c" linenr="51" column="1" str="}" scope="0000012D5C834CA0" link="0000012D5CF5A7C0"/>
+    <token id="0000012D5CF5B4E0" file="main.c" linenr="53" column="1" str="void" scope="0000012D5C834970" type="name"/>
+    <token id="0000012D5CF5B300" file="main.c" linenr="53" column="6" str="EXTI0_IRQHandler" scope="0000012D5C834970" type="name" function="0000012D5D106ED0"/>
+    <token id="0000012D5CF5B120" file="main.c" linenr="53" column="22" str="(" scope="0000012D5C834970" link="0000012D5CF5B180" valueType-type="void" valueType-reference="None"/>
+    <token id="0000012D5CF5B180" file="main.c" linenr="53" column="23" str=")" scope="0000012D5C834970" link="0000012D5CF5B120"/>
+    <token id="0000012D5CF5B1E0" file="main.c" linenr="54" column="1" str="{" scope="0000012D5C835520" link="0000012D5D323680"/>
+    <token id="0000012D5CF5B420" file="main.c" linenr="55" column="2" str="(" scope="0000012D5C835520" isExpandedMacro="true" link="0000012D5CF5B360"/>
+    <token id="0000012D5CF5B240" file="main.c" linenr="55" column="2" str="(" scope="0000012D5C835520" isExpandedMacro="true" link="0000012D5CF5B480" values="0000012D5C88C710" astParent="0000012D5CF5B5A0" astOperand1="0000012D5CF5B540" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000012D5C834A80"/>
+    <token id="0000012D5CF5B2A0" file="main.c" linenr="55" column="2" str="GPIO_type" scope="0000012D5C835520" type="name" isExpandedMacro="true" type-scope="0000012D5C834A80"/>
+    <token id="0000012D5CF5B3C0" file="main.c" linenr="55" column="2" str="*" scope="0000012D5C835520" type="op" isArithmeticalOp="true" isExpandedMacro="true"/>
+    <token id="0000012D5CF5B480" file="main.c" linenr="55" column="2" str=")" scope="0000012D5C835520" isExpandedMacro="true" link="0000012D5CF5B240"/>
+    <token id="0000012D5CF5B540" file="main.c" linenr="55" column="2" str="0x40010800" scope="0000012D5C835520" type="number" isInt="true" isExpandedMacro="true" values="0000012D5C88C4F0" astParent="0000012D5CF5B240" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000012D5CF5B360" file="main.c" linenr="55" column="2" str=")" scope="0000012D5C835520" isExpandedMacro="true" link="0000012D5CF5B420"/>
+    <token id="0000012D5CF5B5A0" file="main.c" linenr="55" column="7" str="." scope="0000012D5C835520" astParent="0000012D5CF5B6C0" astOperand1="0000012D5CF5B240" astOperand2="0000012D5CF5B600" originalName="->" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF5B600" file="main.c" linenr="55" column="9" str="ODR" scope="0000012D5C835520" type="name" astParent="0000012D5CF5B5A0"/>
+    <token id="0000012D5CF5B6C0" file="main.c" linenr="55" column="13" str="^=" scope="0000012D5C835520" type="op" isAssignmentOp="true" astOperand1="0000012D5CF5B5A0" astOperand2="0000012D5D322660" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5CF5B720" file="main.c" linenr="55" column="16" str="(" scope="0000012D5C835520" link="0000012D5D3228A0" values="0000012D5C88CBD0" astParent="0000012D5D322660" astOperand1="0000012D5D322C00" valueType-type="int" valueType-sign="signed" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0000012D5D322300" file="main.c" linenr="55" column="17" str="int" scope="0000012D5C835520" type="name"/>
+    <token id="0000012D5D322960" file="main.c" linenr="55" column="20" str="*" scope="0000012D5C835520" type="op" isArithmeticalOp="true"/>
+    <token id="0000012D5D3228A0" file="main.c" linenr="55" column="21" str=")" scope="0000012D5C835520" link="0000012D5CF5B720"/>
+    <token id="0000012D5D322C00" file="main.c" linenr="55" column="22" str="1u" scope="0000012D5C835520" type="number" isInt="true" values="0000012D5C88C6B0" astParent="0000012D5CF5B720" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5D322660" file="main.c" linenr="55" column="24" str="&lt;&lt;" scope="0000012D5C835520" type="op" isArithmeticalOp="true" values="0000012D5C88C9F0" astParent="0000012D5CF5B6C0" astOperand1="0000012D5CF5B720" astOperand2="0000012D5D322E40" valueType-type="int" valueType-sign="signed" valueType-pointer="1" valueType-reference="None"/>
+    <token id="0000012D5D322E40" file="main.c" linenr="55" column="26" str="13" scope="0000012D5C835520" type="number" isInt="true" values="0000012D5C88CBF0" astParent="0000012D5D322660" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000012D5D3225A0" file="main.c" linenr="55" column="28" str=";" scope="0000012D5C835520"/>
+    <token id="0000012D5D322900" file="main.c" linenr="56" column="2" str="(" scope="0000012D5C835520" isExpandedMacro="true" link="0000012D5D3230E0"/>
+    <token id="0000012D5D323800" file="main.c" linenr="56" column="2" str="(" scope="0000012D5C835520" isExpandedMacro="true" link="0000012D5D3233E0" values="0000012D5C88C790" astParent="0000012D5D323020" astOperand1="0000012D5D3224E0" valueType-type="record" valueType-pointer="1" valueType-reference="None" valueType-typeScope="0000012D5C834DB0"/>
+    <token id="0000012D5D322360" file="main.c" linenr="56" column="2" str="EXTI_type" scope="0000012D5C835520" type="name" isExpandedMacro="true" type-scope="0000012D5C834DB0"/>
+    <token id="0000012D5D3223C0" file="main.c" linenr="56" column="2" str="*" scope="0000012D5C835520" type="op" isArithmeticalOp="true" isExpandedMacro="true"/>
+    <token id="0000012D5D3233E0" file="main.c" linenr="56" column="2" str=")" scope="0000012D5C835520" isExpandedMacro="true" link="0000012D5D323800"/>
+    <token id="0000012D5D3224E0" file="main.c" linenr="56" column="2" str="0x40010400" scope="0000012D5C835520" type="number" isInt="true" isExpandedMacro="true" values="0000012D5C88CA50" astParent="0000012D5D323800" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000012D5D3230E0" file="main.c" linenr="56" column="2" str=")" scope="0000012D5C835520" isExpandedMacro="true" link="0000012D5D322900"/>
+    <token id="0000012D5D323020" file="main.c" linenr="56" column="6" str="." scope="0000012D5C835520" astParent="0000012D5D323140" astOperand1="0000012D5D323800" astOperand2="0000012D5D322120" originalName="->" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5D322120" file="main.c" linenr="56" column="8" str="PR" scope="0000012D5C835520" type="name" astParent="0000012D5D323020"/>
+    <token id="0000012D5D323140" file="main.c" linenr="56" column="11" str="|=" scope="0000012D5C835520" type="op" isAssignmentOp="true" astOperand1="0000012D5D323020" astOperand2="0000012D5D3222A0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5D322240" file="main.c" linenr="56" column="14" str="1u" scope="0000012D5C835520" type="number" isInt="true" values="0000012D5C88CAF0" astParent="0000012D5D3222A0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5D3222A0" file="main.c" linenr="56" column="16" str="&lt;&lt;" scope="0000012D5C835520" type="op" isArithmeticalOp="true" values="0000012D5C88C4B0" astParent="0000012D5D323140" astOperand1="0000012D5D322240" astOperand2="0000012D5D3231A0" valueType-type="int" valueType-sign="unsigned" valueType-reference="None"/>
+    <token id="0000012D5D3231A0" file="main.c" linenr="56" column="18" str="0" scope="0000012D5C835520" type="number" isInt="true" values="0000012D5C88CC30" astParent="0000012D5D3222A0" valueType-type="int" valueType-sign="signed" valueType-reference="None"/>
+    <token id="0000012D5D322840" file="main.c" linenr="56" column="19" str=";" scope="0000012D5C835520"/>
+    <token id="0000012D5D323680" file="main.c" linenr="57" column="1" str="}" scope="0000012D5C835520" link="0000012D5CF5B1E0"/>
+  </tokenlist>
+  <scopes>
+    <scope id="0000012D5C834970" type="Global">
+      <functionList>
+        <function id="0000012D5CC38540" tokenDef="0000012D5CD70DA0" name="CLOCK_INIT" type="Function"/>
+        <function id="0000012D5CC387C0" tokenDef="0000012D5CD710A0" name="GPIO_INIT" type="Function"/>
+        <function id="0000012D5CC38860" tokenDef="0000012D5CD71160" name="AFIO_INIT" type="Function"/>
+        <function id="0000012D5CC38900" tokenDef="0000012D5CF980C0" name="EXTI_INIT" type="Function"/>
+        <function id="0000012D5CC389A0" tokenDef="0000012D5CF58DF0" name="NVIC_INIT" type="Function"/>
+        <function id="0000012D5D106250" tokenDef="0000012D5CF5ACA0" name="setup" type="Function"/>
+        <function id="0000012D5D1067F0" tokenDef="0000012D5CF5A760" name="main" type="Function"/>
+        <function id="0000012D5D106ED0" tokenDef="0000012D5CF5B300" name="EXTI0_IRQHandler" type="Function"/>
+      </functionList>
+    </scope>
+    <scope id="0000012D5C834FD0" type="Struct" className="AFIO_type" bodyStart="0000012D5CF59030" bodyEnd="0000012D5CF592D0" nestedIn="0000012D5C834970">
+      <varlist>
+        <var id="0000012D5CF14DD0"/>
+        <var id="0000012D5CF13D30"/>
+        <var id="0000012D5CF13C50"/>
+        <var id="0000012D5CF146D0"/>
+        <var id="0000012D5CF14740"/>
+        <var id="0000012D5CF13FD0"/>
+        <var id="0000012D5CF135C0"/>
+      </varlist>
+    </scope>
+    <scope id="0000012D5C834DB0" type="Struct" className="EXTI_type" bodyStart="0000012D5CF59630" bodyEnd="0000012D5CF91720" nestedIn="0000012D5C834970">
+      <varlist>
+        <var id="0000012D5CF13CC0"/>
+        <var id="0000012D5CF13630"/>
+        <var id="0000012D5CF14040"/>
+        <var id="0000012D5CF149E0"/>
+        <var id="0000012D5CF13860"/>
+        <var id="0000012D5CF14970"/>
+      </varlist>
+    </scope>
+    <scope id="0000012D5C834A80" type="Struct" className="GPIO_type" bodyStart="0000012D5CF91780" bodyEnd="0000012D5CD69BC0" nestedIn="0000012D5C834970">
+      <varlist>
+        <var id="0000012D5CF13780"/>
+        <var id="0000012D5CF139B0"/>
+        <var id="0000012D5CF13DA0"/>
+        <var id="0000012D5CF14190"/>
+        <var id="0000012D5CF16420"/>
+        <var id="0000012D5CF15D90"/>
+        <var id="0000012D5CF15700"/>
+      </varlist>
+    </scope>
+    <scope id="0000012D5C8351F0" type="Struct" className="RCC_type" bodyStart="0000012D5CD69CE0" bodyEnd="0000012D5CF5AE20" nestedIn="0000012D5C834970">
+      <varlist>
+        <var id="0000012D5CF15930"/>
+        <var id="0000012D5CF15B60"/>
+        <var id="0000012D5CF15770"/>
+        <var id="0000012D5CF16AB0"/>
+        <var id="0000012D5CF15E70"/>
+        <var id="0000012D5CF150E0"/>
+        <var id="0000012D5CF16030"/>
+        <var id="0000012D5CF15EE0"/>
+        <var id="0000012D5CF159A0"/>
+        <var id="0000012D5CF16810"/>
+      </varlist>
+    </scope>
+    <scope id="0000012D5C834B90" type="Function" className="setup" bodyStart="0000012D5CF5AE80" bodyEnd="0000012D5CF59CE0" nestedIn="0000012D5C834970" function="0000012D5D106250"/>
+    <scope id="0000012D5C834CA0" type="Function" className="main" bodyStart="0000012D5CF5A7C0" bodyEnd="0000012D5CF5B780" nestedIn="0000012D5C834970" function="0000012D5D1067F0"/>
+    <scope id="0000012D5C834EC0" type="While" bodyStart="0000012D5CF5B840" bodyEnd="0000012D5CF5B660" nestedIn="0000012D5C834CA0"/>
+    <scope id="0000012D5C835520" type="Function" className="EXTI0_IRQHandler" bodyStart="0000012D5CF5B1E0" bodyEnd="0000012D5D323680" nestedIn="0000012D5C834970" function="0000012D5D106ED0"/>
+  </scopes>
+  <variables>
+    <var id="0000012D5CF135C0" nameToken="0000012D5CF58F10" typeStartToken="0000012D5CF58D30" typeEndToken="0000012D5CF58D30" access="Public" scope="0000012D5C834FD0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF13630" nameToken="0000012D5CF91C00" typeStartToken="0000012D5CF91A80" typeEndToken="0000012D5CF91A80" access="Public" scope="0000012D5C834DB0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF13780" nameToken="0000012D5CF918A0" typeStartToken="0000012D5CF91840" typeEndToken="0000012D5CF91840" access="Public" scope="0000012D5C834A80" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF13860" nameToken="0000012D5CF91F00" typeStartToken="0000012D5CF91D20" typeEndToken="0000012D5CF91D20" access="Public" scope="0000012D5C834DB0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF139B0" nameToken="0000012D5CF91CC0" typeStartToken="0000012D5CF91A20" typeEndToken="0000012D5CF91A20" access="Public" scope="0000012D5C834A80" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF13C50" nameToken="0000012D5CF59810" typeStartToken="0000012D5CF59210" typeEndToken="0000012D5CF59210" access="Public" scope="0000012D5C834FD0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF13CC0" nameToken="0000012D5CF92440" typeStartToken="0000012D5CF91D80" typeEndToken="0000012D5CF91D80" access="Public" scope="0000012D5C834DB0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF13D30" nameToken="0000012D5CF58EB0" typeStartToken="0000012D5CF59690" typeEndToken="0000012D5CF59690" access="Public" scope="0000012D5C834FD0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF13DA0" nameToken="0000012D5CF92260" typeStartToken="0000012D5CF91AE0" typeEndToken="0000012D5CF91AE0" access="Public" scope="0000012D5C834A80" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF13FD0" nameToken="0000012D5CF58C10" typeStartToken="0000012D5CF590F0" typeEndToken="0000012D5CF590F0" access="Public" scope="0000012D5C834FD0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF14040" nameToken="0000012D5CF91B40" typeStartToken="0000012D5CF91960" typeEndToken="0000012D5CF91960" access="Public" scope="0000012D5C834DB0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF14190" nameToken="0000012D5CD69A40" typeStartToken="0000012D5CD690E0" typeEndToken="0000012D5CD690E0" access="Public" scope="0000012D5C834A80" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF146D0" nameToken="0000012D5CF58AF0" typeStartToken="0000012D5CF58D90" typeEndToken="0000012D5CF58D90" access="Public" scope="0000012D5C834FD0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF14740" nameToken="0000012D5CF58BB0" typeStartToken="0000012D5CF58B50" typeEndToken="0000012D5CF58B50" access="Public" scope="0000012D5C834FD0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF14970" nameToken="0000012D5CF921A0" typeStartToken="0000012D5CF91900" typeEndToken="0000012D5CF91900" access="Public" scope="0000012D5C834DB0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF149E0" nameToken="0000012D5CF92500" typeStartToken="0000012D5CF924A0" typeEndToken="0000012D5CF924A0" access="Public" scope="0000012D5C834DB0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF14DD0" nameToken="0000012D5CF59150" typeStartToken="0000012D5CF596F0" typeEndToken="0000012D5CF596F0" access="Public" scope="0000012D5C834FD0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF150E0" nameToken="0000012D5CF5A4C0" typeStartToken="0000012D5CF5AD60" typeEndToken="0000012D5CF5AD60" access="Public" scope="0000012D5C8351F0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF15700" nameToken="0000012D5CD69440" typeStartToken="0000012D5CD69E00" typeEndToken="0000012D5CD69E00" access="Public" scope="0000012D5C834A80" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF15770" nameToken="0000012D5CD69DA0" typeStartToken="0000012D5CD69E60" typeEndToken="0000012D5CD69E60" access="Public" scope="0000012D5C8351F0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF15930" nameToken="0000012D5CD695C0" typeStartToken="0000012D5CD691A0" typeEndToken="0000012D5CD691A0" access="Public" scope="0000012D5C8351F0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF159A0" nameToken="0000012D5CF59E60" typeStartToken="0000012D5CF5A580" typeEndToken="0000012D5CF5A580" access="Public" scope="0000012D5C8351F0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF15B60" nameToken="0000012D5CD69D40" typeStartToken="0000012D5CD69800" typeEndToken="0000012D5CD69800" access="Public" scope="0000012D5C8351F0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF15D90" nameToken="0000012D5CD69140" typeStartToken="0000012D5CD69680" typeEndToken="0000012D5CD69680" access="Public" scope="0000012D5C834A80" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF15E70" nameToken="0000012D5CF59B00" typeStartToken="0000012D5CD69F80" typeEndToken="0000012D5CD69F80" access="Public" scope="0000012D5C8351F0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF15EE0" nameToken="0000012D5CF59DA0" typeStartToken="0000012D5CF5A6A0" typeEndToken="0000012D5CF5A6A0" access="Public" scope="0000012D5C8351F0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF16030" nameToken="0000012D5CF5ABE0" typeStartToken="0000012D5CF5AAC0" typeEndToken="0000012D5CF5AAC0" access="Public" scope="0000012D5C8351F0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF16420" nameToken="0000012D5CD69500" typeStartToken="0000012D5CD69860" typeEndToken="0000012D5CD69860" access="Public" scope="0000012D5C834A80" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF16810" nameToken="0000012D5CF5A100" typeStartToken="0000012D5CF5AB20" typeEndToken="0000012D5CF5AB20" access="Public" scope="0000012D5C8351F0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+    <var id="0000012D5CF16AB0" nameToken="0000012D5CD69980" typeStartToken="0000012D5CD698C0" typeEndToken="0000012D5CD698C0" access="Public" scope="0000012D5C8351F0" constness="0" isArgument="false" isArray="false" isClass="false" isConst="false" isExtern="false" isLocal="false" isPointer="false" isReference="false" isStatic="false"/>
+  </variables>
+  <valueflow>
+    <values id="0000012D5C88C770">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0000012D5C88C710">
+      <value intvalue="1073809408" known="true"/>
+    </values>
+    <values id="0000012D5C88C4F0">
+      <value intvalue="1073809408" known="true"/>
+    </values>
+    <values id="0000012D5C88CBD0">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0000012D5C88C6B0">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0000012D5C88C9F0">
+      <value intvalue="8192" known="true"/>
+    </values>
+    <values id="0000012D5C88CBF0">
+      <value intvalue="13" known="true"/>
+    </values>
+    <values id="0000012D5C88C790">
+      <value intvalue="1073808384" known="true"/>
+    </values>
+    <values id="0000012D5C88CA50">
+      <value intvalue="1073808384" known="true"/>
+    </values>
+    <values id="0000012D5C88CAF0">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0000012D5C88C4B0">
+      <value intvalue="1" known="true"/>
+    </values>
+    <values id="0000012D5C88CC30">
+      <value intvalue="0" known="true"/>
+    </values>
+  </valueflow>
+</dump>
+</dumps>
