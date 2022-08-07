@@ -16,8 +16,8 @@
       		NOTE: Not all peripherals are implemented to apply upper features.
 	              The implemented peripherals till now:
 		        1. USARTx 	x ->1, 2 or 3. 
-		        2. UARTx	  x->1, 2.
-            		3. IOPx     x->A, B, C, D, E, F and G.
+		        2. UARTx	x->1, 2.
+            		3. IOPx     	x->A, B, C, D, E, F and G.
             		4. AFIO.
   	4. Calculating the driving clock frequency of APB1 and APB2 busses
       		NOTE: Calculating these clock frequences if the Sysclk is driven by PLLCLK is not implemented yet.
@@ -39,14 +39,14 @@
 
 ### USART Driver
 	ONLY the UART basic functionalities and configuratins
-- Implemented finctonalities
-	1. Send data.
-	2. Recieve data.
-	3. Setting callback function to be executed when recieving data.
-	4. Setting callback function to be executed when transmitting data done.
-- Implented Configurations
-	1. Mode -> Send only, Receive only or send and recieve.
-	2. Baudrate.
-	3. Word length.
-	5. Number of stop bits.
-	6. Parity type.
+	- Implemented finctonalities
+		1. Send data.
+		2. Recieve data.
+		3. Setting callback function to be executed when recieving data.
+		4. Setting callback function to be executed when transmitting data done.
+	- Implented Configurations
+		1. Mode -> Send only, Receive only or send and recieve.
+		2. Baudrate.
+		3. Word length.
+		5. Number of stop bits.
+		6. Parity type.
