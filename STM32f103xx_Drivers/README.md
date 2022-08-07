@@ -4,7 +4,6 @@
 ### NVIC Driver
 	1. Enabling and prioritizing global interrupt of a specific peripheral.
 	2. Disabling global interrupt of a specific peripheral.
-	
 		NOTE: Not all peripherals interrupt are implemented.
 			  The implemented interrupts till now:
 				1. USARTx 	x ->1, 2 or 3. 
