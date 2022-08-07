@@ -1,39 +1,16 @@
-/**********************************************************************************************************************
- *  FILE DESCRIPTION
- *  -----------------------------------------------------------------------------------------------------------------*/
-/**        \file  FileName.c
- *        \brief
+/*
+ * Rcc.c
  *
- *      \details
- *
- *
- *********************************************************************************************************************/
-
+ *      Author: ENG: Mohame Mostafa Maher
+ *      contact: mohamed.mostafa.maher.999@gmail.com
+ *      details: Nvic driver to enable, prioritize or disable global interrupt mask for each handler
+ */
 /**********************************************************************************************************************
  *  INCLUDES
  *********************************************************************************************************************/
 #include "Nvic_Cfg.h"
 #include "Nvic_Types.h"
 
-/**********************************************************************************************************************
- *  LOCAL MACROS CONSTANT\FUNCTION
- *********************************************************************************************************************/
-
-/**********************************************************************************************************************
- *  LOCAL DATA
- *********************************************************************************************************************/
-
-/**********************************************************************************************************************
- *  GLOBAL DATA
- *********************************************************************************************************************/
-
-/**********************************************************************************************************************
- *  LOCAL FUNCTION PROTOTYPES
- *********************************************************************************************************************/
-
-/**********************************************************************************************************************
- *  LOCAL FUNCTIONS
- *********************************************************************************************************************/
 
 /**********************************************************************************************************************
  *  GLOBAL FUNCTIONS
@@ -54,7 +31,8 @@
 void NVIC_Init(void)
 {
 	vuint8 i;
-	vuint8 regOffset, bitOffset;
+	vuint8 regOffset;
+	vuint8 bitOffset;
 
 	// enable Interrupt
 	for (i = 0; i < NUM_INTERRUPTS_ACTIVATED; i++)
@@ -62,7 +40,7 @@ void NVIC_Init(void)
 		regOffset = (Nvic_Config->Interrupt) / 32u;
 		bitOffset = (Nvic_Config->Interrupt) % 32u;
 
-		NVIC->ISER[regOffset] |= 1u << bitOffset;
+		NVIC->ISER[regOffset] |= 1u << (uint32)bitOffset;
 	}
 
 	// set priorities
@@ -91,18 +69,19 @@ void NVIC_Init(void)
  *******************************************************************************/
 void NVIC_EnableIrq(Nvic_InterruptsType interrupt, Nvic_Priority priority)
 {
-	vuint8 regOffset, bitOffset;
+	vuint8 regOffset;
+	vuint8 bitOffset;
 	// Enable interrpt
-	regOffset = (Nvic_Config->Interrupt) / 32u;
-	bitOffset = (Nvic_Config->Interrupt) % 32u;
+	regOffset = (interrupt) / 32u;
+	bitOffset = (interrupt) % 32u;
 
 	NVIC->ISER[regOffset] |= 1u << bitOffset;
 
 	// Priotitize the interrupt
-	regOffset = (Nvic_Config->Interrupt) / 4u;
-	bitOffset = ((Nvic_Config->Interrupt) % 4u) * 8;
+	regOffset = (interrupt) / 4u;
+	bitOffset = ((interrupt) % 4u) * 8;
 
-	NVIC->IPR[regOffset] |= Nvic_Config->Priority << bitOffset;
+	NVIC->IPR[regOffset] |= priority << bitOffset;
 }
 
 /******************************************************************************
@@ -119,9 +98,10 @@ void NVIC_EnableIrq(Nvic_InterruptsType interrupt, Nvic_Priority priority)
  *******************************************************************************/
 void NVIC_DisableIrq(Nvic_InterruptsType interrupt)
 {
-	vuint8 regOffset, bitOffset;
-	regOffset = (Nvic_Config->Interrupt) / 32u;
-	bitOffset = (Nvic_Config->Interrupt) % 32u;
+	vuint8 regOffset;
+	vuint8 bitOffset;
+	regOffset = (interrupt) / 32u;
+	bitOffset = (interrupt) % 32u;
 
 	NVIC->ICER[regOffset] |= 1u << bitOffset;
 }

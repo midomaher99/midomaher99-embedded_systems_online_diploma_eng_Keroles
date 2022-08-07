@@ -2,11 +2,11 @@
 
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
- *         File:  <Write File Name>
- *       Module:  -
+ *         File:  Nvic.h
+ *       Module:  NVIC
  *
- *  Description:  <Write File DESCRIPTION here>
- *
+ *  Description:  Nvic driver header file
+ * 
  *********************************************************************************************************************/
 #ifndef NVIC_H
 #define NVIC_H
@@ -15,22 +15,6 @@
  * INCLUDES
  *********************************************************************************************************************/
 #include "Nvic_Types.h"
-
-/**********************************************************************************************************************
- *  GLOBAL CONSTANT MACROS
- *********************************************************************************************************************/
-
-/**********************************************************************************************************************
- *  GLOBAL FUNCTION MACROS
- *********************************************************************************************************************/
-
-/**********************************************************************************************************************
- *  GLOBAL DATA TYPES AND STRUCTURES
- *********************************************************************************************************************/
-
-/**********************************************************************************************************************
- *  GLOBAL DATA PROTOTYPES
- *********************************************************************************************************************/
 
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION PROTOTYPES
@@ -51,7 +35,7 @@ extern void NVIC_Init(void);
 
 /******************************************************************************
  * \Syntax          : void NVIC_EnableIrq(NVIC_InterruptsType interrupt, Nvic_Priority priority)
- * \Description     : Enable the global interrupt mask of an interrupt and prioritize it
+ * \Description     : Enable the global interrupt mask of an interrupt and prioritize it in run time
  *
  * \Sync\Async      : Synchronous
  * \Reentrancy      : Non Reentrant
@@ -66,7 +50,7 @@ extern void NVIC_EnableIrq(Nvic_InterruptsType interrupt, Nvic_Priority priority
 
 /******************************************************************************
  * \Syntax          : void NVIC_DisableIrq(NVIC_InterruptsType interrupt)
- * \Description     : Disable the global interrupt mask of an interrupt
+ * \Description     : Disable the global interrupt mask of an interrupt in run time
  *
  * \Sync\Async      : Synchronous
  * \Reentrancy      : Non Reentrant

@@ -1,14 +1,10 @@
-/**********************************************************************************************************************
- *  FILE DESCRIPTION
- *  -----------------------------------------------------------------------------------------------------------------*/
-/**        \file  FileName.c
- *        \brief
+/*
+ * Port.c
  *
- *      \details
- *
- *
- *********************************************************************************************************************/
-
+ *      Author: ENG: Mohame Mostafa Maher
+ *      contact: mohamed.mostafa.maher.999@gmail.com
+ *      details: GPIO/ Port driver  
+ */
 /**********************************************************************************************************************
  *  INCLUDES
  *********************************************************************************************************************/
@@ -21,22 +17,7 @@
 #define LOW_Pin (0x100u) // this value depends on the pinType
 						 //  in Port_Types.h
 
-#define IS_LOW_Pin(PinID) ((PinID & 0xF00) < LOW_Pin) // pins 0 -> 8 is the Low pins
-/**********************************************************************************************************************
- *  LOCAL DATA
- *********************************************************************************************************************/
-
-/**********************************************************************************************************************
- *  GLOBAL DATA
- *********************************************************************************************************************/
-
-/**********************************************************************************************************************
- *  LOCAL FUNCTION PROTOTYPES
- *********************************************************************************************************************/
-
-/**********************************************************************************************************************
- *  LOCAL FUNCTIONS
- *********************************************************************************************************************/
+#define IS_LOW_Pin(PinID) ((uint32)((PinID) & 0xF00) < LOW_Pin) // pins 0 -> 8 is the Low pins
 
 /**********************************************************************************************************************
  *  GLOBAL FUNCTIONS
@@ -66,23 +47,23 @@ void Port_Init(void)
 		value = Port_Config[i].Configuration & 0xf;
 		if (IS_LOW_Pin(Port_Config[i].pinID))
 		{
-			GPIO(portBase)->CRL &= ~(0xf << bitShift);
-			GPIO(portBase)->CRL |= (value << bitShift);
+			GPIO(portBase)->CRL &= ~(0xfu << (uint32)bitShift);
+			GPIO(portBase)->CRL |= ((uint32)value << (uint32)bitShift);
 
 			// for pull up and pull down
 			bitShift = bitShift / 4;
-			GPIO(portBase)->ODR &= ~(1u << bitShift);
-			GPIO(portBase)->ODR |= ((Port_Config[i].Configuration >> 8u) << bitShift);
+			GPIO(portBase)->ODR &= ~(1u << (uint32)bitShift);
+			GPIO(portBase)->ODR |= ((uint32)(Port_Config[i].Configuration >> 8u) << (uint32)bitShift);
 		}
 		else
 		{
-			GPIO(portBase)->CRH &= ~(0xf << bitShift);
-			GPIO(portBase)->CRH |= (value << bitShift);
+			GPIO(portBase)->CRH &= ~(0xfu << (uint32)bitShift);
+			GPIO(portBase)->CRH |= ((uint32)value << (uint32)bitShift);
 
 			// for pull up and pull down
 			bitShift = (bitShift / 4) + 8;
-			GPIO(portBase)->ODR &= ~(1u << bitShift);
-			GPIO(portBase)->ODR |= ((Port_Config[i].Configuration >> 8u) << bitShift);
+			GPIO(portBase)->ODR &= ~(1u << (uint32)bitShift);
+			GPIO(portBase)->ODR |= ((uint32)(Port_Config[i].Configuration >> 8u) << (uint32)bitShift);
 		}
 	}
 }
@@ -106,30 +87,30 @@ void Port_SetConfigration(Port_PinType pinId, Port_PinConfigurationType configur
 	uint32 portBase;
 	uint8 bitShift;
 	uint8 value;
-	portBase = APB2_BASE | (pinId >> 12u);
-	bitShift = pinId & 0xFF;
-	value = configuration & 0xf;
+	portBase = APB2_BASE | ((uint32)pinId >> 12u);
+	bitShift = pinId & 0xFFu;
+	value = configuration & 0xFu;
 
 	if (IS_LOW_Pin(pinId))
 	{
-		GPIO(portBase)->CRL &= ~(0xf << bitShift);
-		GPIO(portBase)->CRL |= (value << bitShift);
+		GPIO(portBase)->CRL &= ~(0xfu << (uint32)bitShift);
+		GPIO(portBase)->CRL |= ((uint32)value << (uint32)bitShift);
 		// for pull up and pull down
 		bitShift = bitShift / 4;
-		GPIO(portBase)->ODR &= ~(1u << bitShift);
-		GPIO(portBase)->ODR |= ((configuration >> 8u) << bitShift);
+		GPIO(portBase)->ODR &= ~(1u << (uint32)bitShift);
+		GPIO(portBase)->ODR |= ((uint32)(configuration >> 8u) << (uint32)bitShift);
 	}
 	else
 	{
-		GPIO(portBase)->CRH &= ~(0xf << bitShift);
-		GPIO(portBase)->CRH |= (value << bitShift);
+		GPIO(portBase)->CRH &= ~(0xFu << (uint32)bitShift);
+		GPIO(portBase)->CRH |= ((uint32)value << (uint32)bitShift);
 		// for pull up and pull down
 		bitShift = (bitShift / 4) + 8;
-		GPIO(portBase)->ODR &= ~(1u << bitShift);
-		GPIO(portBase)->ODR |= ((configuration >> 8u) << bitShift);
+		GPIO(portBase)->ODR &= ~(1u << (uint32)bitShift);
+		GPIO(portBase)->ODR |= ((uint32)(configuration >> 8u) << (uint32)bitShift);
 	}
 }
 
 /**********************************************************************************************************************
- *  END OF FILE: FileName.c
+ *  END OF FILE: Port.c
  *********************************************************************************************************************/

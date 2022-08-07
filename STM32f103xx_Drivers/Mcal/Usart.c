@@ -1,14 +1,12 @@
-/**********************************************************************************************************************
- *  FILE DESCRIPTION
- *  -----------------------------------------------------------------------------------------------------------------*/
-/**        \file  FileName.c
- *        \brief
+/*
+ * main.c
  *
- *      \details
+ *      Author:  ENG: Mohame Mostafa Maher
+ *      contact: mohamed.mostafa.maher.999@gmail.com
  *
- *
- *********************************************************************************************************************/
-
+ *      details: USART driver
+ * 				ONLY UART basic functionalities are implemented
+ */
 /**********************************************************************************************************************
  *  INCLUDES
  *********************************************************************************************************************/
@@ -25,39 +23,30 @@
  *  LOCAL DATA
  *********************************************************************************************************************/
 
-static Usart_CallBacksType Usart_CallBacksArray[5] = {NULL};
-/**********************************************************************************************************************
- *  GLOBAL DATA
- *********************************************************************************************************************/
-
-/**********************************************************************************************************************
- *  LOCAL FUNCTION PROTOTYPES
- *********************************************************************************************************************/
-
-/**********************************************************************************************************************
- *  LOCAL FUNCTIONS
- *********************************************************************************************************************/
-
+static Usart_CallBacksType Usart_CallBacksArray[5] ; 
 /**********************************************************************************************************************
  *  GLOBAL FUNCTIONS
  *********************************************************************************************************************/
 
 /******************************************************************************
- * \Syntax          : Std_ReturnType FunctionName(AnyType parameterName)
- * \Description     : Describe this service
+ * \Syntax          : void USART_Init(void)
+ * \Description     : Initialize the USART configurations (Frame, baudrate amd the direction(Tx, Rx OR Tx/Rx))
+ * 					  This configurations is set in Usart_Lcfg.c
  *
  * \Sync\Async      : Synchronous
  * \Reentrancy      : Non Reentrant
- * \Parameters (in) : parameterName   Parameter Describtion
+ * \Parameters (in) : None
  * \Parameters (out): None
- * \Return value:   : Std_ReturnType  E_OK
- *                                    E_NOT_OK
+ * \Return value:   : None
  *******************************************************************************/
 void USART_Init(void)
 {
 	uint8 i;
 	uint32 base;
-	uint32 fClk, div, mantissa, fraction;
+	uint32 fClk;
+	uint32 div;
+	uint32 mantissa;
+	uint32 fraction;
 	for (i = 0; i < NUM_USARTs_ACTIVATED; i++)
 	{
 		base = Usart_Config[i].USARTx;
@@ -90,60 +79,121 @@ void USART_Init(void)
 
 		// rounding the fractional part to nearest decemal number
 		if ((fraction % 100u) >= 50u)
+		{
 			fraction = (fraction + 100u) / 100u;
+		}
 		else
+		{
 			fraction /= 100u;
-
+		}
 		mantissa = mantissa + ((fraction & 0x10u) >> 4u); // add carry if found to mantissa
 		fraction = fraction & 0xFu;						  // fraction without carry to fit the frist foue bits
 
 		USART(base)->BRR = 0x0; // reseting BRR reg
-		USART(base)->BRR |= (fraction << 0) | (mantissa << 4u);
+		USART(base)->BRR |= ((uint32)fraction << 0u) | ((uint32)mantissa << 4u);
 
-		USART(base)->CR1 |= (Usart_Config[i].mode << 2u);
-		USART(base)->CR1 |= (1u << 13u); // Enable USART instance
+		USART(base)->CR1 |= ((uint32)Usart_Config[i].mode << 2u); // Tx, Rx or Tx/Rx
+		USART(base)->CR1 |= (1u << 13u);						  // Enable USART instance
+		
+		USART(base)->DR =(uint8) 0b11;
 	}
 }
 
-void USART_Send(Usart_InstanceType USARTx, uint16 *buffer)
+/******************************************************************************
+ * \Syntax          : void USART_Send(Usart_InstanceType USARTx, uint16 data)
+ * \Description     : Sends the data required to be sent by USART To the USARt data buffer
+ *
+ * \Sync\Async      : Synchronous
+ * \Reentrancy      : Reentrant
+ * \Parameters (in) : Usart_InstanceType 	the USARt instance used From Usart_types.h
+ * 					  uint16 data			the data required to be sent
+ * \Parameters (out): None
+ * \Return value:   : None
+ *******************************************************************************/
+void USART_Send(Usart_InstanceType USARTx, uint16 data)
 {
-	if (!(((USART(USARTx)->CR1) >> 7) & 1u)) // polling mechanism
-		while (!(USART(USARTx)->SR & 1 << 7))
-			;
 
-	switch (((USART(USARTx)->CR1) >> 12) & 1u) // cheack word length
+	 if (!((uint32)(USART(USARTx)->CR1) & ( 1u<< 7u))) // polling mechanism
+	 {
+	 	while (!((uint32)(USART(USARTx)->SR )& (1u << 7u)))
+		{
+		}
+	}
+	else
+	{
+	}
+
+	switch (((uint32)(USART(USARTx)->CR1) >> 12u) & 1u) // cheack word length
 	{
 	case 0: // word length = 8bit
-		USART(USARTx)->DR = *buffer & 0xFF;
+		USART(USARTx)->DR = data & 0xFFu;
 		break;
 	case 1: // word length = 9bit
-		USART(USARTx)->DR = *buffer & 0x1FF;
+		USART(USARTx)->DR = data & 0x1FFu;
+		break;
+	default:
 		break;
 	}
 }
 
-void USART_Recieve(Usart_InstanceType USARTx, uint16 *buffer)
+/******************************************************************************
+ * \Syntax          : void USART_Recieve(Usart_InstanceType USARTx, uint16 *data)
+ * \Description     : Recieves the data arrives the USARt data buffer
+ *
+ * \Sync\Async      : Synchronous
+ * \Reentrancy      : None Reentrant
+ * \Parameters (in) : Usart_InstanceType 	the USARt instance used From Usart_types.h
+ * \Parameters (out): uint16 *buffer		Pointer to the buffer that will recieves the data from the functin
+ * \Return value:   : None
+ *******************************************************************************/
+void USART_Recieve(Usart_InstanceType USARTx, uint16 *data)
 {
-	if (!(((USART(USARTx)->CR1) >> 5) & 1u)) // polling mechanism
-		while (!(USART(USARTx)->SR & 1 << 5))
-			;
-
-	if ((((USART(USARTx)->CR1) >> 12) & 1u) == 1) // word length = 9bit
+	if (!(((uint32)(USART(USARTx)->CR1))&(1u<< 5u))) // polling mechanism
 	{
-		if ((((USART(USARTx)->CR1) >> 12) & 1u) == 1) // parity control enabled
-			*buffer = (uint16)USART(USARTx)->DR & 0xFF;
+		while (!(((uint32)(USART(USARTx)->SR))&( 1u << 5u)))
+		{
+		}
+	}
+	else
+	{
+	}
+	if ((((uint32)(USART(USARTx)->CR1) >> 12) & 1u) == 1u) // word length = 9bit
+	{
+		if ((((uint32)(USART(USARTx)->CR1) >> 12u) & 1u) == 1u) // parity control enabled
+		{
+			*data = (uint16)USART(USARTx)->DR & 0xFFu;
+		}
 		else // parity control disabled
-			*buffer = (uint16)USART(USARTx)->DR & 0x1FF;
+		{
+			*data = (uint16)USART(USARTx)->DR & 0x1FFu;
+		}
 	}
 	else // word length = 8bit
 	{
-		if ((((USART(USARTx)->CR1) >> 12) & 1u) == 1) // parity control enabled
-			*buffer = (uint16)USART(USARTx)->DR & 0x7F;
+		if (((uint32)((uint32)(USART(USARTx)->CR1) >> 12u) & 1u) == 1u) // parity control enabled
+		{
+			*data = (uint16)USART(USARTx)->DR & 0x7Fu;
+		}
 		else // parity control disabled
-			*buffer = (uint16)USART(USARTx)->DR & 0xFF;
+		{
+			*data = (uint16)USART(USARTx)->DR & 0xFFu;
+		}
 	}
 }
 
+/******************************************************************************
+ * \Syntax          : void USART_EnableTxNotification(Usart_InstanceType USARTx, Usart_Notification callBackPtr)
+ * \Description     : Enables the transmit buffer empty TxE interrupt and assign a user defined Callback function to be
+ * 					  Excecuted when the interrupt occures
+ * 					  NOTE : user must enable USARTx global interrupt from NVIC driver
+ *
+ * \Sync\Async      : Synchronous
+ * \Reentrancy      : Reentrant
+ * \Parameters (in) : Usart_InstanceType 	the USARt instance used From Usart_types.h
+ * \Parameters (out): Usart_Notification	the desired callback function to be execurtes From Usart_types.h
+ * 						NOTE : the callback MUST be void function(void)
+ * \Return value:   : None
+ *******************************************************************************/
 void USART_EnableTxNotification(Usart_InstanceType USARTx, Usart_Notification callBackPtr)
 {
 	switch (USARTx)
@@ -163,10 +213,26 @@ void USART_EnableTxNotification(Usart_InstanceType USARTx, Usart_Notification ca
 	case Usart_Uart5:
 		Usart_CallBacksArray[4].Tx_CallBack = callBackPtr;
 		break;
+	default:
+		break;
 	}
 
-	USART(USARTx)->CR1 |= 1 << 7; // enable Tx buffer empty interrupt
+	USART(USARTx)->CR1 |= 1u << 7u; // enable Tx buffer empty interrupt
 }
+
+/******************************************************************************
+ * \Syntax          : void USART_EnableRxNotification(Usart_InstanceType USARTx, Usart_Notification callBackPtr)
+ * \Description     : Enables the Recieve buffer not empty RxNE interrupt and assign a user defined Callback function to be
+ * 					  Excecuted when the interrupt occures
+ * 					  NOTE : user must enable USARTx global interrupt from NVIC driver
+ *
+ * \Sync\Async      : Synchronous
+ * \Reentrancy      : Reentrant
+ * \Parameters (in) : Usart_InstanceType 	the USARt instance used From Usart_types.h
+ * \Parameters (out): Usart_Notification	the desired callback function to be execurtes From Usart_types.h
+ * 						NOTE : the callback MUST be void function(void)
+ * \Return value:   : None
+ *******************************************************************************/
 void USART_EnableRxNotification(Usart_InstanceType USARTx, Usart_Notification callBackPtr)
 {
 	switch (USARTx)
@@ -186,47 +252,87 @@ void USART_EnableRxNotification(Usart_InstanceType USARTx, Usart_Notification ca
 	case Usart_Uart5:
 		Usart_CallBacksArray[4].Rx_CallBack = callBackPtr;
 		break;
+	default:
+		break;
 	}
 
-	USART(USARTx)->CR1 |= 1 << 5; // enable Rx buffer empty interrupt
+	USART(USARTx)->CR1 |= 1u << 5u; // enable Rx buffer empty interrupt
 }
+
+/**********************************************************************************************************************
+ *  Handlers
+ *********************************************************************************************************************/
 
 void USART1_IRQHandler()
 {
-	if(((USART1->SR >>7u)&1u) && ((USART1->CR1 >>7u)&1u))	// Tx buffer empty and TxE interrupt enabled
-		Usart_CallBacksArray[0].Tx_CallBack();		
-	else if(((USART1->SR >>5u)&1u) && ((USART1->CR1 >>5u)&1u)) // Rx buffer not empty and RxNE interrupt enabled
+	if (((USART1->SR >> 7u) & 1u) && ((USART1->CR1 >> 7u) & 1u)) // Tx buffer empty and TxE interrupt enabled
+	{
+		Usart_CallBacksArray[0].Tx_CallBack();
+	}
+	else if (((USART1->SR >> 5u) & 1u) && ((USART1->CR1 >> 5u) & 1u)) // Rx buffer not empty and RxNE interrupt enabled
+	{
 		Usart_CallBacksArray[0].Rx_CallBack();
+	}
+	else
+	{
+	}
 }
 void USART2_IRQHandler()
 {
-	if(((USART2->SR >>7u)&1u) && ((USART2->CR1 >>7u)&1u))	// Tx buffer empty and TxE interrupt enabled
-		Usart_CallBacksArray[0].Tx_CallBack();		
-	else if(((USART2->SR >>5u)&1u) && ((USART2->CR1 >>5u)&1u)) // Rx buffer not empty and RxNE interrupt enabled
+	if (((USART2->SR >> 7u) & 1u) && ((USART2->CR1 >> 7u) & 1u)) // Tx buffer empty and TxE interrupt enabled
+	{
+		Usart_CallBacksArray[0].Tx_CallBack();
+	}
+	else if (((USART2->SR >> 5u) & 1u) && ((USART2->CR1 >> 5u) & 1u)) // Rx buffer not empty and RxNE interrupt enabled
+	{
 		Usart_CallBacksArray[0].Rx_CallBack();
+	}
+	else
+	{
+	}
 }
 void USART3_IRQHandler()
 {
-	if(((USART3->SR >>7u)&1u) && ((USART3->CR1 >>7u)&1u))	// Tx buffer empty and TxE interrupt enabled
-		Usart_CallBacksArray[0].Tx_CallBack();		
-	else if(((USART3->SR >>5u)&1u) && ((USART3->CR1 >>5u)&1u)) // Rx buffer not empty and RxNE interrupt enabled
+	if (((USART3->SR >> 7u) & 1u) && ((USART3->CR1 >> 7u) & 1u)) // Tx buffer empty and TxE interrupt enabled
+	{
+		Usart_CallBacksArray[0].Tx_CallBack();
+	}
+	else if (((USART3->SR >> 5u) & 1u) && ((USART3->CR1 >> 5u) & 1u)) // Rx buffer not empty and RxNE interrupt enabled
+	{
 		Usart_CallBacksArray[0].Rx_CallBack();
-} 
+	}
+	else
+	{
+	}
+}
 void UART4_IRQHandler()
 {
-	if(((UART4->SR >>7u)&1u) && ((UART4->CR1 >>7u)&1u))	// Tx buffer empty and TxE interrupt enabled
-		Usart_CallBacksArray[0].Tx_CallBack();		
-	else if(((UART4->SR >>5u)&1u) && ((UART4->CR1 >>5u)&1u)) // Rx buffer not empty and RxNE interrupt enabled
+	if (((UART4->SR >> 7u) & 1u) && ((UART4->CR1 >> 7u) & 1u)) // Tx buffer empty and TxE interrupt enabled
+	{
+		Usart_CallBacksArray[0].Tx_CallBack();
+	}
+	else if (((UART4->SR >> 5u) & 1u) && ((UART4->CR1 >> 5u) & 1u)) // Rx buffer not empty and RxNE interrupt enabled
+	{
 		Usart_CallBacksArray[0].Rx_CallBack();
-}                         
+	}
+	else
+	{
+	}
+}
 void UART5_IRQHandler()
 {
-	if(((UART5->SR >>7u)&1u) && ((UART5->CR1 >>7u)&1u))	// Tx buffer empty and TxE interrupt enabled
-		Usart_CallBacksArray[0].Tx_CallBack();		
-	else if(((UART5->SR >>5u)&1u) && ((UART5->CR1 >>5u)&1u)) // Rx buffer not empty and RxNE interrupt enabled
+	if (((UART5->SR >> 7u) & 1u) && ((UART5->CR1 >> 7u) & 1u)) // Tx buffer empty and TxE interrupt enabled
+	{
+		Usart_CallBacksArray[0].Tx_CallBack();
+	}
+	else if (((UART5->SR >> 5u) & 1u) && ((UART5->CR1 >> 5u) & 1u)) // Rx buffer not empty and RxNE interrupt enabled
+	{
 		Usart_CallBacksArray[0].Rx_CallBack();
+	}
+	else
+	{
+	}
 }
-
 
 /**********************************************************************************************************************
  *  END OF FILE: Usart.c

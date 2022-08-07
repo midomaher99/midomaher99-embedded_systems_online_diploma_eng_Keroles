@@ -1,37 +1,24 @@
-/*
- * memory_map.h
- *
- *  Created on: Jul 12, 2022
- * @author         : ENG/Mohamed Mostafa Maher
- * @contact		   : mohamed.mostafa.maher.999@gmail.com
- */
+/**********************************************************************************************************************
 
-#ifndef MEMORY_MAP_H_
-#define MEMORY_MAP_H_
+ *  FILE DESCRIPTION
+ *  -------------------------------------------------------------------------------------------------------------------
+ *         File:  MemoryMap.h
+ *
+ *  Description:  STM32F103xx header file
+ *
+ *********************************************************************************************************************/
+#ifndef MEMORYMAP_H
+#define MEMORYMAP_H
+
+/**********************************************************************************************************************
+ * INCLUDES
+ *********************************************************************************************************************/
 
 #include "PlatformTypes.h"
 
-#define RW__ volatile
-#define RO__ volatile
-#define WO__ volatile
-#define RWC__ volatile
-#define RW1C__ volatile
-#define W1C__ volatile
-
-#define APB1_BASE 0x40000000u
-#define APB2_BASE 0x40010000u
-
-#define AFIO_BASE 0x40010000u
-#define EXTI_BASE 0x40010400u
-#define GPIOA_BASE 0x40010800u
-#define RCC_BASE 0x40021000u
-#define NVIC_BASE 0xE000E004u
-
-#define USART1_BASE 0x40013800u
-#define USART2_BASE 0x40004400u
-#define USART3_BASE 0x40004800u
-#define UART4_BASE 0x40004C00u
-#define UART5_BASE 0x40005000u
+/**********************************************************************************************************************
+ *  GLOBAL DATA TYPES AND STRUCTURES
+ *********************************************************************************************************************/
 
 typedef struct
 {
@@ -81,19 +68,19 @@ typedef struct
 
 typedef struct
 {
-	RO__ uint32 ICTR;
+	vuint32 ICTR;
 	vuint32 reserved1[62];
-	RW__ uint32 ISER[8];
+	vuint32 ISER[8];
 	vuint32 reserved2[24];
-	RW__ uint32 ICER[8];
+	vuint32 ICER[8];
 	vuint32 reserved3[24];
-	RW__ uint32 ISPR[8];
+	vuint32 ISPR[8];
 	vuint32 reserved4[24];
-	RW__ uint32 ICPR[8];
+	vuint32 ICPR[8];
 	vuint32 reserved5[24];
-	RO__ uint32 IABR[8];
+	vuint32 IABR[8];
 	vuint32 reserved6[56];
-	RW__ uint32 IPR[60];
+	vuint32 IPR[60];
 } NVIC_Type;
 
 typedef struct
@@ -107,11 +94,45 @@ typedef struct
 	vuint32 GPTPR;
 } USART_Type;
 
+/**********************************************************************************************************************
+ *  GLOBAL MACROS
+ *********************************************************************************************************************/
+// Base addresses
+
+//Busses
+#define APB1_BASE 0x40000000u
+#define APB2_BASE 0x40010000u
+//AFIO
+#define AFIO_BASE 0x40010000u
+//EXTI
+#define EXTI_BASE 0x40010400u
+//GPIO
+#define GPIOA_BASE 0x40010800u
+//RCC
+#define RCC_BASE 0x40021000u
+//NVIC
+#define NVIC_BASE 0xE000E004u
+//USART
+#define USART1_BASE 0x40013800u
+#define USART2_BASE 0x40004400u
+#define USART3_BASE 0x40004800u
+#define UART4_BASE 0x40004C00u
+#define UART5_BASE 0x40005000u
+
+
+// Peripherals instances
+
+//AFIO
 #define AFIO ((AFIO_type *)AFIO_BASE)
+//EXTI
 #define EXTI ((EXTI_type *)EXTI_BASE)
+//GPIO
 #define GPIOA ((GPIO_type *)GPIOA_BASE)
+
 #define GPIO(BASE) ((GPIO_type *)BASE)
+//RCC
 #define RCC ((RCC_type *)RCC_BASE)
+//USART
 #define USART1 ((USART_Type *)USART1_BASE)
 #define USART2 ((USART_Type *)USART2_BASE)
 #define USART3 ((USART_Type *)USART3_BASE)
@@ -120,6 +141,15 @@ typedef struct
 
 #define USART(BASE) ((USART_Type *)BASE)
 #define UART(BASE) ((USART_Type *)BASE)
+//NVIC
 #define NVIC ((NVIC_Type *)NVIC_BASE)
 
-#endif /* MEMORY_MAP_H_ */
+/**********************************************************************************************************************
+ *  GLOBAL FUNCTION PROTOTYPES
+ *********************************************************************************************************************/
+
+#endif /* MEMORYMAP_H */
+
+/**********************************************************************************************************************
+ *  END OF FILE: MemoryMap.h
+ *********************************************************************************************************************/
