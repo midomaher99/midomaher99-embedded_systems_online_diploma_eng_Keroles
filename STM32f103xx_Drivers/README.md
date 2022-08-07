@@ -39,12 +39,12 @@
 
 ### USART Driver
 	ONLY the UART basic functionalities and configurations
-* Implemented functionalities
+#### Implemented functionalities
 	1. Send data.
 	2. Recieve data.
 	3. Setting callback function to be executed when receiving data.
 	4. Setting callback function to be executed when transmitting data done.
-* Implemented Configurations
+#### Implemented Configurations
 	1. Mode -> Send only, Receive only or send and receive.
 	2. Baudrate.
 	3. Word length.
