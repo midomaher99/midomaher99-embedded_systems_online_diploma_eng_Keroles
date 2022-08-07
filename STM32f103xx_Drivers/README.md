@@ -17,7 +17,7 @@
 	              The implemented peripherals till now:
 			1. USARTx 	x ->1, 2 or 3. 
 			2. UARTx	x->1, 2.
-			3. IOPx     x->A, B, C, D, E, F, and G.
+			3. IOPx     	x->A, B, C, D, E, F, and G.
 			4. AFIO.
   	4. Calculating the driving clock frequency of APB1 and APB2 busses
       		NOTE: Calculating these clock frequencies if the Sysclk is driven by PLLCLK is not implemented yet.
