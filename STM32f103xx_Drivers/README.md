@@ -1,5 +1,5 @@
 # STM32F103xx drivers
-  all codes in this folder are aligned with (MISRA 2012) standard. Codes are checked using cppcheck/addons.
+  All codes in this folder are aligned with (MISRA 2012) standard. Codes are checked using cppcheck/addons.
 ## Implemented Features
 ### NVIC Driver
 	1. Enabling and prioritizing global interrupt of a specific peripheral.
