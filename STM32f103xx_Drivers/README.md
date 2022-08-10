@@ -38,7 +38,7 @@
 	Setting GPIO pis configurations.
 
 ### USART Driver
-	ONLY the UART basic functionalities and configurations
+	ONLY the UART basic functionalities and configurations in full duplex mode.
 #### Implemented functionalities
 	1. Send data.
 	2. Recieve data.
